@@ -2,13 +2,15 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>【资本市场早间快报】2026年5月7日</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
         body {
-            font-family: 'Noto Sans SC', system-ui, sans-serif;
+            font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .report-header {
             background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
@@ -38,38 +40,68 @@
             height: 3px;
             background: linear-gradient(to right, #22d3ee, #67e8f9);
         }
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                padding: 1rem;
+            }
+            table {
+                font-size: 14px;
+            }
+            .prose {
+                font-size: 15.5px;
+                line-height: 1.7;
+            }
+        }
+        /* 卡片悬浮效果 */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200">
     <div class="max-w-5xl mx-auto">
         <!-- 头部 -->
-        <div class="report-header text-white py-8 px-8 border-b border-slate-700">
+        <div class="report-header text-white py-6 px-6 border-b border-slate-700 sticky top-0 z-50 shadow-md">
             <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-4xl font-bold tracking-tight">【资本市场早间快报】</h1>
+                <div class="flex-1">
+                    <h1 class="text-3xl font-bold tracking-tight">【资本市场早间快报】</h1>
                     <p class="text-2xl text-cyan-300 mt-1">2026年5月7日</p>
-                    <p class="text-slate-400 text-sm mt-3">截至北京时间 2026 年 5 月 7 日早 6 点 · 美股 5 月 6 日收盘 · 专业资本市场分析</p>
+                    <p class="text-slate-400 text-xs mt-2 flex items-center gap-1">
+                        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                        截至北京时间 2026 年 5 月 7 日早 6 点 · 美股 5 月 6 日收盘
+                    </p>
                 </div>
                 <div class="text-right">
-                    <div class="inline-flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-2xl text-sm">
-                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                        实时快照
-                    </div>
+                    <a href="#" onclick="window.location.reload()" 
+                       class="inline-flex items-center gap-2 bg-slate-900/70 hover:bg-slate-900 px-4 py-2 rounded-2xl text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.058 11H1M12 3v2m0 16v2m9-9H15m-6 0a8 8 0 01-7.714-6.192M12 19.5a7.5 7.5 0 01-7.5-7.5" />
+                        </svg>
+                        刷新
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="flex">
-            <!-- 左侧导航 -->
+            <!-- 左侧导航（大屏显示） -->
             <div class="w-64 bg-slate-900 border-r border-slate-700 p-6 hidden lg:flex flex-col">
                 <div class="sticky top-6">
                     <nav class="space-y-1">
-                        <a href="#overview" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">整体趋势</a>
-                        <a href="#global" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">一、全球市场概览</a>
-                        <a href="#hk" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">二、港股市场与交表动态</a>
-                        <a href="#sse" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">三、上交所发行上市动态</a>
-                        <a href="#news" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">四、资本市场新闻</a>
-                        <a href="#data" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-xl">五、关键数据一览</a>
+                        <a href="#overview" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">整体趋势</a>
+                        <a href="#global" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">一、全球市场概览</a>
+                        <a href="#hk" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">二、港股市场与交表动态</a>
+                        <a href="#sse" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">三、上交所发行上市动态</a>
+                        <a href="#news" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">四、资本市场新闻</a>
+                        <a href="#data" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">五、关键数据一览</a>
                     </nav>
                     
                     <div class="mt-12 pt-8 border-t border-slate-700">
@@ -87,8 +119,8 @@
                 </div>
             </div>
 
-            <!-- 主要内容 -->
-            <div class="flex-1 p-8">
+            <!-- 主要内容（手机端优化） -->
+            <div class="flex-1 main-content p-5 lg:p-8">
                 
                 <!-- 整体趋势 -->
                 <section id="overview" class="mb-16">
@@ -97,15 +129,15 @@
                         <p>截至北京时间2026年5月7日早6点（对应美股5月6日收盘、欧洲/亚洲多数市场5月6日或最近交易日），全球资本市场呈现科技与成长股领涨的强势格局。美股三大指数集体收涨，<strong>标普500报7,365.12点（+1.46%）</strong>、<strong>纳斯达克100涨2.08%</strong>、<strong>道琼斯涨1.24%</strong>，均创近期新高，科技股成为绝对主线；欧洲市场反弹强劲，<strong>EURO STOXX 50涨2.68%</strong>、<strong>DAX 40涨2.12%</strong>、<strong>FTSE 100涨2.15%</strong>，能源与银行板块贡献突出。亚洲市场分化中走强，中国<strong>上证综指报4,160.17点（+1.17%）</strong>、<strong>恒生指数报26,213.78点（+1.22%）</strong>，港股科技指数同步上行；<strong>日经225突破62,000点、盘中涨4.2%。</strong></p>
                         <p>债券温和，<strong>Bloomberg US Aggregate涨0.19%</strong>；大宗商品避险情绪升温，<strong>黄金大涨2.8-3.4%</strong>、白银涨约5%。科技硬件与AI基础设施成为最大亮点：<strong>Nvidia投资Corning 5亿美元</strong>推动后者美股盘前<strong>飙涨近18-20%</strong>，双方宣布在北卡与得州新建三座先进光纤工厂；<strong>AMD股价暴涨20.02%至纪录新高（总市值逼近7,000亿美元）</strong>，CEO Lisa Su强调AI代理驱动数据中心营收57% YoY增长；<strong>台积电涨5.04%刷新纪录，总市值2.15万亿美元</strong>。</p>
                         <p>AI领域融资与应用加速落地：DeepSeek正与国家大基金等洽谈<strong>30-40亿美元首轮融资，投后估值或达450-500亿美元</strong>；Anthropic与SpaceX达成Colossus 1全部算力合作，并升级Claude Code限额与“dreaming”智能体；火山引擎Doubao-Seed-2.0-lite实现全模态理解升级。机器人与具身智能持续突破，1X启动NEO人形机器人加州量产、Genesis AI发布GENE-26.5灵巧模型。财报季亮点频现，Uber、Instacart、DoorDash、Arm等Q1营收均超预期或指引上调。</p>
-                        <p>政策面，美国财政部宣布<strong>1,250亿美元季度再融资</strong>，中国两市融资余额<strong>增加410.83亿元</strong>，监管动态包括元道通信立案调查、Anthropic高管访韩共商AI安全。整体而言，AI算力、半导体与机器人产业链驱动风险偏好提升，市场对美联储政策预期与企业盈利乐观，但地缘政治与利率波动仍需警惕。波动性或在财报密集期持续，建议关注硬科技估值与供应链落地进度。（378字）</p>
+                        <p>政策面，美国财政部宣布<strong>1,250亿美元季度再融资</strong>，中国两市融资余额<strong>增加410.83亿元</strong>，监管动态包括元道通信立案调查、Anthropic高管访韩共商AI安全。整体而言，AI算力、半导体与机器人产业链驱动风险偏好提升，市场对美联储政策预期与企业盈利乐观，但地缘政治与利率波动仍需警惕。波动性或在财报密集期持续，建议关注硬科技估值与供应链落地进度。</p>
                     </div>
                 </section>
 
                 <!-- 全球市场概览 -->
                 <section id="global" class="mb-16">
                     <h2 class="section-header text-3xl font-semibold mb-6 text-white">一、全球市场概览</h2>
-                    <div class="bg-slate-900 rounded-3xl p-1 shadow-inner">
-                        <table class="w-full text-sm">
+                    <div class="bg-slate-900 rounded-3xl p-1 shadow-inner overflow-x-auto">
+                        <table class="w-full text-sm min-w-[640px]">
                             <thead>
                                 <tr class="border-b border-slate-700">
                                     <th class="text-left py-5 px-6 font-medium text-slate-400">类别</th>
@@ -140,7 +172,7 @@
                     <div class="prose prose-invert max-w-none">
                         <p class="mb-4">港股市场5月6日随A股走强，<strong>恒生指数涨1.22%</strong>，恒生科技指数同步受益AI与半导体板块拉动。</p>
                         <p class="font-medium mb-3">新上市申请动态（AP &amp; PHIP，截至5月6日最新披露）：</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-300">
+                        <ul class="list-disc pl-6 space-y-2 text-slate-300 text-[15px]">
                             <li><strong>Yusheng Holdings Limited</strong>（06/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
                             <li><strong>科興生物製藥股份有限公司</strong>（06/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
                             <li><strong>廈門科拓通訊技術股份有限公司</strong>（05/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
@@ -155,7 +187,7 @@
                     <h2 class="section-header text-3xl font-semibold mb-6 text-white">三、上交所发行上市动态</h2>
                     <div class="prose prose-invert">
                         <p><strong>上交所最新发行上市动态（2026-05-06披露为主）</strong>：</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-300">
+                        <ul class="list-disc pl-6 space-y-2 text-slate-300 text-[15px]">
                             <li><strong>锐石创芯（重庆）科技股份有限公司</strong>：科创板首次公开发行股票招股说明书（申报稿）。</li>
                             <li><strong>上海兆芯集成电路股份有限公司</strong>：8-1-2 发行人及中介机构关于第二轮审核问询函的回复。</li>
                             <li><strong>天博智能科技（山东）股份有限公司</strong>：8-1 发行人及中介机构关于首轮审核问询函的回复。</li>
@@ -170,145 +202,9 @@
                     
                     <div class="space-y-12">
                         <!-- 机器人与具身智能 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">机器人与具身智能</h3>
-                            <ul class="space-y-4 text-slate-300">
+                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
+                            <ul class="space-y-4 text-slate-300 text-[15px]">
                                 <li><strong>1X</strong>在加州工厂启动<strong>NEO人形机器人</strong>全规模量产，实现美国本土垂直整合制造。</li>
                                 <li><strong>Genesis AI</strong>推出<strong>GENE-26.5基础模型</strong>，采用先进数据引擎与专有机械手，实现更高灵巧度机器人操作。</li>
-                                <li><strong>WaiV Robotics</strong>获<strong>750万美元融资</strong>，专注海上无人机起降系统。</li>
-                                <li><strong>Tutor Intelligence</strong>构建真实世界机器人AI数据工厂，在总部运行100台Sonny半人形机器人。</li>
-                                <li><strong>ABB Robotics</strong>推出OmniVance自主表面精加工单元；<strong>NORD Drivesystems</strong>发布新型电机启动器与变频驱动器。</li>
-                            </ul>
-                        </div>
-
-                        <!-- 融资与估值动态 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">融资与估值动态</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li><strong>DeepSeek</strong>与国家大基金洽谈首轮融资<strong>30-40亿美元</strong>，投后估值或达<strong>450-500亿美元</strong>。</li>
-                                <li>芬兰AI实验室<strong>QuTwo</strong>完成<strong>2,500万欧元天使轮</strong>，估值<strong>3.25亿欧元</strong>。</li>
-                                <li><strong>Ethos</strong>获a16z领投<strong>2,275万美元A轮</strong>；<strong>Corgi</strong>获TCV领投<strong>1.6亿美元B轮</strong>，估值<strong>13亿美元</strong>。</li>
-                            </ul>
-                        </div>
-
-                        <!-- AI大模型与应用进展 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">AI大模型与应用进展</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li>火山引擎<strong>Doubao-Seed-2.0-lite</strong>升级为豆包家族首款全模态理解模型，支持视频/图像/音频/文本原生统一理解。</li>
-                                <li><strong>OpenAI</strong>与Microsoft、AMD等合作推出<strong>Multipath Reliable Connection (MRC)</strong>协议。</li>
-                                <li><strong>Anthropic</strong>与<strong>SpaceX</strong>签署Colossus 1全部算力协议（新增300MW+），升级Claude Code限额并推出“dreaming”功能。</li>
-                            </ul>
-                        </div>
-
-                        <!-- 半导体芯片与硬科技 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">半导体芯片与硬科技</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li><strong>Nvidia</strong>投资<strong>Corning 5亿美元</strong>，双方新建三座光纤工厂，美国产能提升10倍，Corning盘前<strong>涨近18-20%</strong>。</li>
-                                <li><strong>AMD</strong>股价<strong>涨20.02%</strong>，总市值<strong>6,951亿美元</strong>；<strong>台积电</strong>涨<strong>5.04%</strong>，市值<strong>2.15万亿美元</strong>。</li>
-                                <li><strong>SpaceX</strong>拟建Terafab芯片工厂，投资至少<strong>550亿美元</strong>，总资本开支或达<strong>1,190亿美元</strong>。</li>
-                                <li><strong>威刚</strong>库存突破<strong>86亿元</strong>，DRAM/NAND价格2026年持续上涨，预计2027年仍缺货。</li>
-                            </ul>
-                        </div>
-
-                        <!-- 财报与业绩动态 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">财报与业绩动态</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li><strong>Uber</strong> Q1营收<strong>13.2亿美元（+14% YoY）</strong>，Gross Bookings<strong>+25%</strong>。</li>
-                                <li><strong>Instacart</strong> Q1营收<strong>10.2亿美元（+14% YoY）</strong>，GTV<strong>+13%</strong>。</li>
-                                <li><strong>DoorDash</strong> Q1营收<strong>40.4亿美元（+33% YoY）</strong>，Q2指引乐观，盘后涨11%+。</li>
-                                <li><strong>Arm</strong> Q4营收<strong>15亿美元（+20% YoY）</strong>，AGI CPU预计驱动2027-2028年<strong>20亿美元</strong>销售，盘后涨11%+。</li>
-                                <li><strong>Snap</strong> Q1营收<strong>15.3亿美元（+12% YoY）</strong>，终止Perplexity 4亿美元交易，盘后跌4%+。</li>
-                            </ul>
-                        </div>
-
-                        <!-- 政策监管与国际动态 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">政策监管与国际动态</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li>美国财政部宣布季度再融资规模<strong>1,250亿美元</strong>。</li>
-                                <li><strong>元道通信</strong>公告被证监会立案调查进展，涉嫌年报虚假记载。</li>
-                                <li><strong>Anthropic</strong>高管下周访韩，与韩国政府共商AI安全风险方案。</li>
-                                <li>印尼考虑对16岁以下人群实施“网购禁令”。</li>
-                                <li>中国要求银行暂停向受美国制裁炼油厂提供新贷款。</li>
-                                <li>中国两市融资余额<strong>增加410.83亿元</strong>至<strong>27,282.33亿元</strong>。</li>
-                            </ul>
-                        </div>
-
-                        <!-- 其他资本市场新闻 -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4">其他资本市场新闻</h3>
-                            <ul class="space-y-4 text-slate-300">
-                                <li><strong>VALUExBRK 2026</strong>投资者会议：Bill Ackman、Mohnish Pabrai等讨论AI、永久资本与长期投资。</li>
-                                <li><strong>Brian Chesky</strong>（Airbnb CEO）访谈：AI Founder Mode与消费者体验。</li>
-                                <li><strong>Lisa Su</strong>（AMD CEO）CNBC采访：AI代理驱动周期。</li>
-                                <li><strong>天舟九号</strong>货运飞船已受控再入大气层。</li>
-                                <li><strong>华友钴业</strong>拟以<strong>2.1亿美元</strong>收购大西洋锂业100%股权。</li>
-                                <li><strong>科笛</strong> CU-30101获得国家药监局药品上市许可。</li>
-                                <li>量子计算机协同超级计算机刷新大分子模拟纪录。</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 关键数据一览 -->
-                <section id="data" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">五、关键数据一览</h2>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden">
-                        <table class="w-full">
-                            <thead class="bg-slate-800">
-                                <tr>
-                                    <th class="text-left py-4 px-6 text-slate-400">指标</th>
-                                    <th class="text-right py-4 px-6 text-slate-400">数值</th>
-                                    <th class="text-left py-4 px-6 text-slate-400">备注</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-700 text-sm">
-                                <tr><td class="py-4 px-6">两市融资余额</td><td class="text-right py-4 px-6 font-semibold">27,282.33亿元</td><td class="py-4 px-6">增加<strong>410.83亿元</strong></td></tr>
-                                <tr><td class="py-4 px-6">DeepSeek投后估值</td><td class="text-right py-4 px-6 font-semibold">450-500亿美元</td><td class="py-4 px-6">国家大基金主导洽谈</td></tr>
-                                <tr><td class="py-4 px-6">Nvidia-Corning投资</td><td class="text-right py-4 px-6 font-semibold">5亿美元</td><td class="py-4 px-6">光纤工厂扩产</td></tr>
-                                <tr><td class="py-4 px-6">AMD市值</td><td class="text-right py-4 px-6 font-semibold">6,951亿美元</td><td class="py-4 px-6">+20.02%</td></tr>
-                                <tr><td class="py-4 px-6">台积电市值</td><td class="text-right py-4 px-6 font-semibold">2.15万亿美元</td><td class="py-4 px-6">+5.04%</td></tr>
-                                <tr><td class="py-4 px-6">SpaceX芯片工厂投资</td><td class="text-right py-4 px-6 font-semibold">≥550亿美元</td><td class="py-4 px-6">总开支或达1,190亿</td></tr>
-                                <tr><td class="py-4 px-6">威刚库存</td><td class="text-right py-4 px-6 font-semibold">86亿元+</td><td class="py-4 px-6">内存缺货至2027年</td></tr>
-                                <tr><td class="py-4 px-6">华友钴业收购</td><td class="text-right py-4 px-6 font-semibold">2.1亿美元</td><td class="py-4 px-6">大西洋锂业100%股权</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- 免责声明 -->
-                <div class="bg-slate-900/70 border border-slate-700 rounded-3xl p-8 text-slate-400 text-sm leading-relaxed">
-                    <strong class="block mb-3 text-slate-300">信息来源</strong>
-                    36氪、科创板日报、Techmeme、The Robot Report、Bloomberg、上交所官网、Yahoo Finance等公开渠道。<br>
-                    数据截至北京时间2026年5月7日早6点，受交易时段影响，实时数据请以官方来源为准。
-                    <div class="mt-8 pt-6 border-t border-slate-700 text-xs">
-                        <strong>免责声明</strong>：本报告仅供参考，不构成任何投资建议。数据来源于公开渠道，请以原始来源为准。
-                    </div>
-                </div>
-
-                <div class="text-center text-slate-500 text-xs mt-12">
-                    本网页由Grok生成 · 专业金融科技风格 · 可直接保存为 .html 文件离线浏览
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Tailwind script already loaded
-        document.documentElement.setAttribute('data-theme', 'dark');
-        
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                                <li><strong>WaiV Robotics</strong>获<strong>750万美元融资
