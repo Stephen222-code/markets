@@ -5,211 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>资本市场早间快报 2026年5月7日</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;500&amp;display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap');
         
         :root {
             --header: #002f5f;
             --bg: #f8f4eb;
             --text: #1a1a1a;
             --accent: #002f5f;
-            --card: #ffffff;
-            --border: #d4d4d4;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: Georgia, 'Noto Sans SC', serif;
+            font-family: 'Georgia', 'Noto Sans SC', serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.75;
-            font-size: 16.5px;
+            line-height: 1.65;
+            font-size: 15.5px;
         }
         
         .container {
             max-width: 1480px;
             margin: 0 auto;
-            padding: 0 36px;
+            padding: 0 32px;
         }
         
-        /* Live Markets Bar */
-        .live-bar {
-            background-color: #f0ece3;
-            border-bottom: 1px solid var(--border);
-            padding: 12px 0;
-            font-size: 14.5px;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        
-        .live-bar .container {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            flex-wrap: wrap;
-        }
-        
-        .live-label {
-            font-weight: 600;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .live-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #00c853;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        .market-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-        
-        .market-item .name { font-weight: 500; }
-        .market-item .value { font-weight: 600; }
-        .positive { color: #00c853; }
-        
-        /* FT Header */
-        .ft-header {
+        /* FT 深蓝头部 */
+        .header {
             background-color: var(--header);
             color: #fff;
             padding: 18px 0;
+            border-bottom: 4px solid #fff;
         }
         
-        .ft-header .container {
+        .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
         
         .ft-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             font-family: Georgia, serif;
-            font-size: 29px;
+            font-size: 28px;
             font-weight: 700;
             letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .ft-logo::before {
-            content: "FT";
-            background-color: #fff;
+            content: 'FT';
+            background: #fff;
             color: var(--header);
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            font-size: 26px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 22px;
+            line-height: 1;
         }
         
-        .report-title {
-            font-size: 23px;
-            font-weight: 500;
+        .title {
+            font-size: 24px;
+            font-weight: 600;
             letter-spacing: -0.5px;
         }
         
         .header-right {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 16px;
             font-size: 15px;
         }
         
         .refresh-btn {
-            background-color: #fff;
+            background: #fff;
             color: var(--header);
             border: 2px solid #fff;
-            padding: 9px 26px;
+            padding: 8px 20px;
             border-radius: 4px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
         .refresh-btn:hover {
-            background-color: transparent;
+            background: transparent;
             color: #fff;
         }
         
-        /* Directory Bar */
+        /* 目录栏 */
         .directory {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            margin: 24px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            padding: 18px 32px;
+            background: #fff;
+            border: 1px solid #d4d4d4;
+            border-radius: 6px;
+            margin: 24px 0 28px;
+            padding: 16px 24px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
         
-        .directory-content {
+        .directory-title {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #555;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        
+        .directory-links {
             display: flex;
-            align-items: center;
             flex-wrap: wrap;
             gap: 24px;
+            font-size: 15px;
         }
         
-        .dir-title {
-            font-weight: 600;
+        .directory-links a {
             color: var(--accent);
-            margin-right: 16px;
-            white-space: nowrap;
-        }
-        
-        .dir-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 26px;
-            font-size: 15.5px;
-        }
-        
-        .dir-link {
-            color: var(--text);
             text-decoration: none;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .dir-link:hover {
-            color: var(--accent);
-        }
-        
-        .dir-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        .dir-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Section Headers */
-        .section-header {
-            font-family: Georgia, serif;
-            font-size: 28px;
             font-weight: 500;
-            color: var(--text);
-            margin-bottom: 14px;
+            transition: color 0.2s;
+        }
+        
+        .directory-links a:hover {
+            color: #005080;
+        }
+        
+        /* Section Header */
+        .section-header {
             position: relative;
-            padding-bottom: 12px;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 18px;
+            padding-bottom: 8px;
         }
         
         .section-header::after {
@@ -217,372 +148,501 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 68px;
+            width: 64px;
             height: 3px;
             background-color: var(--accent);
         }
         
-        /* Cards & Tables */
+        /* 整体趋势 */
+        .trend-text {
+            font-size: 15.5px;
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+        
+        .trend-text p {
+            margin-bottom: 1.25em;
+        }
+        
+        .ft-accent {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* 表格通用 */
         .card-bg {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 26px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: #fff;
+            border: 1px solid #d4d4d4;
+            border-radius: 6px;
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            overflow-x: auto;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 15px;
+            font-size: 14.5px;
         }
         
         th, td {
-            padding: 14px 18px;
+            padding: 14px 16px;
             text-align: left;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #d4d4d4;
         }
         
         th {
-            background-color: #f8f4eb;
+            background: #f8f4eb;
             font-weight: 500;
-            color: var(--accent);
+            color: #333;
+            white-space: nowrap;
         }
         
-        tr:last-child td { border-bottom: none; }
+        tr:last-child td {
+            border-bottom: none;
+        }
         
-        .ft-accent { color: var(--accent); font-weight: 600; }
+        .positive {
+            color: #006d3e;
+            font-weight: 600;
+        }
         
-        /* News Grid */
+        /* 新闻卡片 Grid */
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
             gap: 24px;
         }
         
         .news-card {
-            background-color: var(--card);
-            border: 1px solid var(--border);
+            background: #fff;
+            border: 1px solid #d4d4d4;
             border-radius: 8px;
-            padding: 26px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             height: 100%;
         }
         
         .news-card h3 {
-            font-size: 21px;
-            margin-bottom: 18px;
+            font-size: 18px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .container { padding: 0 24px; }
-            .news-grid { grid-template-columns: 1fr; }
+        .news-card ul {
+            padding-left: 22px;
         }
         
-        @media (max-width: 640px) {
-            .live-bar .container { gap: 14px; font-size: 13px; }
-            .directory-content { flex-direction: column; align-items: flex-start; gap: 14px; }
+        .news-card li {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
         
+        /* 访谈部分 */
+        .interview-item {
+            background: #fff;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        /* 页脚 */
         .footer {
-            border-top: 1px solid var(--border);
-            padding: 36px 0 52px;
+            background: #f8f4eb;
+            border-top: 1px solid #d4d4d4;
+            padding: 32px 0 48px;
             font-size: 13px;
-            color: #666;
+            color: #555;
             text-align: center;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+        /* 移动端友好 */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .directory-links { gap: 16px; font-size: 14px; }
+            .news-grid { grid-template-columns: 1fr; }
+        }
+        
+        .section {
+            margin-bottom: 52px;
         }
     </style>
 </head>
 <body>
-    <!-- Live Markets Bar -->
-    <div class="live-bar">
-        <div class="container">
-            <div class="live-label">
-                <span class="live-dot"></span>
-                LIVE MARKETS • 北京时间 2026年5月7日 早6点
-            </div>
-            
-            <div class="market-item"><span class="name">标普500</span><span class="value ft-accent">7,365.12</span><span class="positive">+105.90 (+1.46%)</span></div>
-            <div class="market-item"><span class="name">纳斯达克100</span><span class="value ft-accent">≈28,599</span><span class="positive">+584 (+2.08%)</span></div>
-            <div class="market-item"><span class="name">恒生指数</span><span class="value ft-accent">26,213.78</span><span class="positive">+315.17 (+1.22%)</span></div>
-            <div class="market-item"><span class="name">DAX 40</span><span class="value ft-accent">24,918.69</span><span class="positive">+516.99 (+2.12%)</span></div>
-            <div class="market-item"><span class="name">黄金</span><span class="value ft-accent">≈4,700</span><span class="positive">+140 (+3.0%)</span></div>
-            
-            <div style="margin-left:auto; font-size:13px; color:#666; display:flex; align-items:center; gap:8px;">
-                美股5/6收盘 • 亚洲/欧洲最新数据 • <span style="background:#00c853;color:#fff;padding:2px 10px;border-radius:9999px;font-size:12px;">刷新</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- FT Header -->
-    <header class="ft-header">
-        <div class="container">
-            <div class="ft-logo">
-                <div>FT</div>
+    <!-- FT 深蓝头部 -->
+    <header class="header">
+        <div class="container header-inner">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="ft-logo">FT</div>
                 <div>
-                    <span class="report-title">资本市场早间快报</span><br>
-                    <span style="font-size:18px;opacity:0.9;">2026年5月7日</span>
+                    <span class="title">资本市场早间快报</span>
+                    <span style="margin-left: 12px; font-size: 22px; opacity: 0.95;">2026年5月7日</span>
                 </div>
             </div>
             
             <div class="header-right">
-                <div>2026年5月7日</div>
-                <button onclick="window.location.reload()" class="refresh-btn">刷新数据</button>
+                <div style="font-size: 15px; opacity: 0.9;">
+                    北京时间 2026年5月7日 · 美股5月6日收盘
+                </div>
+                <button onclick="refreshData()" class="refresh-btn">
+                    <span>↻</span> 刷新数据
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- 目录栏 -->
-    <div class="directory">
-        <div class="container">
-            <div class="directory-content">
-                <div class="dir-title">目录</div>
-                <div class="dir-links">
-                    <a href="#trend" class="dir-link">整体趋势</a>
-                    <a href="#global" class="dir-link">一、全球市场概览</a>
-                    <a href="#hk" class="dir-link">二、港股市场与交表动态</a>
-                    <a href="#sse" class="dir-link">三、上交所发行上市动态</a>
-                    <a href="#news" class="dir-link">四、资本市场新闻</a>
-                    <a href="#data" class="dir-link">五、关键数据一览</a>
-                </div>
+    <div class="container">
+        
+        <!-- 目录栏 -->
+        <div class="directory">
+            <div class="directory-title">目录</div>
+            <div class="directory-links">
+                <a href="#trend">整体趋势</a>
+                <a href="#global">一、全球市场概览</a>
+                <a href="#hk">二、港股市场与交表动态</a>
+                <a href="#sse">三、上交所发行上市动态</a>
+                <a href="#news">四、资本市场新闻</a>
+                <a href="#data">五、关键数据一览</a>
             </div>
         </div>
-    </div>
-
-    <div class="container">
 
         <!-- 整体趋势 -->
-        <section id="trend">
+        <section id="trend" class="section">
             <h2 class="section-header">整体趋势</h2>
-            <div style="max-width:1120px;font-size:17px;">
-                <p style="margin-bottom:1.4rem;">截至北京时间2026年5月7日早6点（美股5月6日收盘，欧洲/亚洲多数市场5月6日或最近交易日），全球资本市场呈现显著的风险偏好改善与科技成长股主导的强势格局。美股三大指数集体上涨，<span class="ft-accent">标普500报7,365.12点（+1.46%）</span>、<span class="ft-accent">纳斯达克100上涨2.08%</span>、<span class="ft-accent">道琼斯指数上涨1.24%</span>，均创近期新高，科技与AI基础设施成为绝对主线。</p>
+            <div class="trend-text">
+                <p>截至北京时间2026年5月7日早6点（美股5月6日收盘，欧洲/亚洲多数市场5月6日或最近交易日），全球资本市场呈现明显的<strong class="ft-accent">风险偏好回暖与科技成长股领涨</strong>格局。美股三大指数集体收高，<strong class="ft-accent">标普500报7,365.12点（+105.90点，+1.46%）</strong>创近期新高，<strong class="ft-accent">纳斯达克100涨2.08%</strong>，<strong class="ft-accent">道琼斯涨1.24%</strong>，科技与AI基础设施板块成为绝对主线。</p>
                 
-                <p style="margin-bottom:1.4rem;">欧洲市场强势反弹，<span class="ft-accent">EURO STOXX 50上涨2.68%</span>、<span class="ft-accent">德国DAX 40上涨2.12%</span>、<span class="ft-accent">英国富时100上涨2.15%</span>，能源、银行板块贡献突出。亚洲市场分化中走强，<span class="ft-accent">上证综指收报4,160.17点（+1.17%）</span>创两月高点，<span class="ft-accent">恒生指数报26,213.78点（+1.22%）</span>，恒生科技指数同步上行。</p>
+                <p>欧洲市场同步强劲反弹，<strong class="ft-accent">EURO STOXX 50涨2.68%</strong>、<strong class="ft-accent">德国DAX 40涨2.12%</strong>、<strong class="ft-accent">英国富时100涨2.15%</strong>，能源、银行与周期板块贡献突出。亚洲市场分化中走强，<strong class="ft-accent">中国上证综指收4,160.17点（+1.17%）</strong>创两月新高，<strong class="ft-accent">恒生指数涨1.22%</strong>至26,213.78点，港股科技指数同步受益。</p>
                 
-                <p style="margin-bottom:1.4rem;">大宗商品避险情绪显著升温，<span class="ft-accent">黄金大涨2.8-3.4%</span>，白银涨幅近5%；债券市场温和，Bloomberg US Aggregate上涨0.19%。AI算力与硬件基础设施投资加速落地：Nvidia投资Corning 5亿美元扩建美国光纤工厂，后者美股盘前暴涨近20%；AMD Q1财报后股价暴涨超19%，CEO Lisa Su强调AI代理驱动数据中心营收57% YoY增长；台积电股价上涨5.04%刷新历史新高，总市值达2.15万亿美元。</p>
+                <p>大宗商品与避险资产表现亮眼，<strong class="ft-accent">黄金大涨2.8-3.4%</strong>至约4,690-4,710美元/盎司，反映地缘政治紧张（中东局势）下的避险需求；白银涨幅近5%。债券市场温和，Bloomberg US Aggregate上涨0.19%。比特币则高位震荡。</p>
                 
-                <p style="margin-bottom:1.4rem;">融资与应用层面亮点频现：DeepSeek正与国家大基金等洽谈首轮融资，投后估值或达450亿美元；OpenAI与AMD、Broadcom、Nvidia、Intel合作推出Multipath Reliable Connection (MRC)协议；火山引擎Doubao-Seed-2.0-lite实现全模态理解升级。财报季方面，Uber、Instacart等Q1业绩超预期或指引乐观。</p>
-                
-                <p>整体而言，市场受AI应用落地、企业盈利超预期以及美联储政策预期提振，风险偏好明显提升。但地缘政治风险（中东局势）、利率环境波动及监管动态仍需警惕。波动性预计在财报密集期持续，建议重点跟踪硬科技估值与供应链落地进展。</p>
+                <p>市场亮点集中于AI算力与半导体产业链：<strong class="ft-accent">Nvidia投资Corning 5亿美元</strong>扩建美国光纤工厂，Corning美股盘前一度飙涨近18-20%；AMD Q1财报后股价大涨，CEO Lisa Su强调AI代理驱动数据中心收入同比增57%；台积电股价刷新纪录新高。DeepSeek正与国家大基金洽谈首轮融资，投后估值有望达450亿美元。整体而言，财报季乐观预期、美联储政策缓和信号与AI长期叙事共同提振风险偏好，但地缘政治波动与利率环境仍需密切关注。</p>
             </div>
         </section>
 
         <!-- 一、全球市场概览 -->
-        <section id="global">
+        <section id="global" class="section">
             <h2 class="section-header">一、全球市场概览</h2>
-            <div class="card-bg" style="overflow-x:auto;">
+            <div class="card-bg">
                 <table>
                     <thead>
                         <tr>
                             <th>类别</th>
                             <th>指数</th>
-                            <th style="text-align:right;">最新收盘</th>
-                            <th style="text-align:right;">涨跌 (点数)</th>
-                            <th style="text-align:right;">涨跌 (%)</th>
+                            <th style="text-align:right">最新收盘</th>
+                            <th style="text-align:right">涨跌 (点数)</th>
+                            <th style="text-align:right">涨跌 (%)</th>
                             <th>备注</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>美股</td><td>标普 500 (S&amp;P 500)</td><td style="text-align:right;" class="ft-accent">7,365.12</td><td style="text-align:right;" class="positive">+105.90</td><td style="text-align:right;" class="positive">+1.46%</td><td>美东5/6收盘，创近期新高</td></tr>
-                        <tr><td>美股</td><td>纳斯达克 100 (Nasdaq 100)</td><td style="text-align:right;" class="ft-accent">≈28,599</td><td style="text-align:right;" class="positive">+584</td><td style="text-align:right;" class="positive">+2.08%</td><td>科技股领涨</td></tr>
-                        <tr><td>美股</td><td>道琼斯 (DJIA)</td><td style="text-align:right;" class="ft-accent">49,910.59</td><td style="text-align:right;" class="positive">+612.34</td><td style="text-align:right;" class="positive">+1.24%</td><td>广泛上涨</td></tr>
-                        <tr><td>欧洲</td><td>欧洲斯托克 50 (EURO STOXX 50)</td><td style="text-align:right;" class="ft-accent">≈6,027</td><td style="text-align:right;" class="positive">+157.50</td><td style="text-align:right;" class="positive">+2.68%</td><td>近期收盘</td></tr>
-                        <tr><td>欧洲</td><td>英国富时 100 (FTSE 100)</td><td style="text-align:right;" class="ft-accent">≈10,438</td><td style="text-align:right;" class="positive">+219.55</td><td style="text-align:right;" class="positive">+2.15%</td><td>5/6交易中/收盘上涨</td></tr>
-                        <tr><td>欧洲</td><td>德国 DAX 40</td><td style="text-align:right;" class="ft-accent">24,918.69</td><td style="text-align:right;" class="positive">+516.99</td><td style="text-align:right;" class="positive">+2.12%</td><td>强势反弹</td></tr>
-                        <tr><td>日本</td><td>日经 225 (Nikkei 225)</td><td style="text-align:right;" class="ft-accent">59,513.12</td><td style="text-align:right;" class="positive">+228.22</td><td style="text-align:right;" class="positive">+0.38%</td><td>5/1收盘（假期影响）</td></tr>
-                        <tr><td>中国</td><td>上证综指 (SSE Composite)</td><td style="text-align:right;" class="ft-accent">4,160.17</td><td style="text-align:right;" class="positive">+48.01</td><td style="text-align:right;" class="positive">+1.17%</td><td>5/6收盘，两月高点</td></tr>
-                        <tr><td>中国</td><td>恒生指数 (Hang Seng)</td><td style="text-align:right;" class="ft-accent">26,213.78</td><td style="text-align:right;" class="positive">+315.17</td><td style="text-align:right;" class="positive">+1.22%</td><td>5/6收盘</td></tr>
-                        <tr><td>全球与新兴</td><td>MSCI ACWI</td><td style="text-align:right;" class="ft-accent">≈1,077-1,085</td><td style="text-align:right;">—</td><td style="text-align:right;" class="positive">+约0.5-1%</td><td>全球股票广泛上涨</td></tr>
-                        <tr><td>债券</td><td>Bloomberg US Aggregate</td><td style="text-align:right;" class="ft-accent">≈2,349.95</td><td style="text-align:right;" class="positive">+4.45</td><td style="text-align:right;" class="positive">+0.19%</td><td>5/5数据，温和上涨</td></tr>
-                        <tr><td>大宗商品</td><td>黄金 (Gold, USD/oz)</td><td style="text-align:right;" class="ft-accent">≈4,690-4,710</td><td style="text-align:right;" class="positive">+130-150</td><td style="text-align:right;" class="positive">+2.8-3.4%</td><td>避险需求强劲</td></tr>
+                        <tr>
+                            <td>美股</td>
+                            <td>标普 500 (S&amp;P 500)</td>
+                            <td style="text-align:right">7,365.12</td>
+                            <td style="text-align:right" class="positive">+105.90</td>
+                            <td style="text-align:right" class="positive">+1.46%</td>
+                            <td>美东5/6收盘，创近期新高</td>
+                        </tr>
+                        <tr>
+                            <td>美股</td>
+                            <td>纳斯达克 100 (Nasdaq 100)</td>
+                            <td style="text-align:right">≈28,599</td>
+                            <td style="text-align:right" class="positive">+584</td>
+                            <td style="text-align:right" class="positive">+2.08%</td>
+                            <td>科技股领涨</td>
+                        </tr>
+                        <tr>
+                            <td>美股</td>
+                            <td>道琼斯 (DJIA)</td>
+                            <td style="text-align:right">49,910.59</td>
+                            <td style="text-align:right" class="positive">+612.34</td>
+                            <td style="text-align:right" class="positive">+1.24%</td>
+                            <td>广泛上涨</td>
+                        </tr>
+                        <tr>
+                            <td>欧洲</td>
+                            <td>欧洲斯托克 50 (EURO STOXX 50)</td>
+                            <td style="text-align:right">≈6,027</td>
+                            <td style="text-align:right" class="positive">+157.50</td>
+                            <td style="text-align:right" class="positive">+2.68%</td>
+                            <td>近期收盘</td>
+                        </tr>
+                        <tr>
+                            <td>欧洲</td>
+                            <td>英国富时 100 (FTSE 100)</td>
+                            <td style="text-align:right">≈10,438</td>
+                            <td style="text-align:right" class="positive">+219.55</td>
+                            <td style="text-align:right" class="positive">+2.15%</td>
+                            <td>5/6交易中/收盘上涨</td>
+                        </tr>
+                        <tr>
+                            <td>欧洲</td>
+                            <td>德国 DAX 40</td>
+                            <td style="text-align:right">24,918.69</td>
+                            <td style="text-align:right" class="positive">+516.99</td>
+                            <td style="text-align:right" class="positive">+2.12%</td>
+                            <td>强势反弹</td>
+                        </tr>
+                        <tr>
+                            <td>日本</td>
+                            <td>日经 225 (Nikkei 225)</td>
+                            <td style="text-align:right">59,513.12</td>
+                            <td style="text-align:right" class="positive">+228.22</td>
+                            <td style="text-align:right" class="positive">+0.38%</td>
+                            <td>5/1收盘（假期影响）</td>
+                        </tr>
+                        <tr>
+                            <td>中国</td>
+                            <td>上证综指 (SSE Composite)</td>
+                            <td style="text-align:right">4,160.17</td>
+                            <td style="text-align:right" class="positive">+48.01</td>
+                            <td style="text-align:right" class="positive">+1.17%</td>
+                            <td>5/6收盘，两月高点</td>
+                        </tr>
+                        <tr>
+                            <td>中国</td>
+                            <td>恒生指数 (Hang Seng)</td>
+                            <td style="text-align:right">26,213.78</td>
+                            <td style="text-align:right" class="positive">+315.17</td>
+                            <td style="text-align:right" class="positive">+1.22%</td>
+                            <td>5/6收盘</td>
+                        </tr>
+                        <tr>
+                            <td>全球与新兴</td>
+                            <td>MSCI ACWI</td>
+                            <td style="text-align:right">≈1,077-1,085</td>
+                            <td style="text-align:right" class="positive">—</td>
+                            <td style="text-align:right" class="positive">+约0.5-1%</td>
+                            <td>全球股票广泛上涨</td>
+                        </tr>
+                        <tr>
+                            <td>债券</td>
+                            <td>Bloomberg US Aggregate</td>
+                            <td style="text-align:right">≈2,349.95</td>
+                            <td style="text-align:right" class="positive">+4.45</td>
+                            <td style="text-align:right" class="positive">+0.19%</td>
+                            <td>5/5数据，温和上涨</td>
+                        </tr>
+                        <tr>
+                            <td>大宗商品</td>
+                            <td>黄金 (USD/oz)</td>
+                            <td style="text-align:right">≈4,690-4,710</td>
+                            <td style="text-align:right" class="positive">+130-150</td>
+                            <td style="text-align:right" class="positive">+2.8-3.4%</td>
+                            <td>避险需求强劲</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
         <!-- 二、港股市场与交表动态 -->
-        <section id="hk">
+        <section id="hk" class="section">
             <h2 class="section-header">二、港股市场与交表动态</h2>
-            <div class="card-bg">
-                <p style="margin-bottom:18px;"><span class="ft-accent">恒生指数</span> 5月6日随A股走强，收涨1.22%至26,213.78点，恒生科技指数同步上行约1-2%，受益AI与半导体板块带动。</p>
-                <p style="font-weight:500;margin-bottom:12px;">新上市申请动态（AP &amp; PHIP，截至2026年5月6日最新披露）：</p>
-                <ul style="padding-left:26px;line-height:1.85;">
-                    <li><span class="ft-accent">Yusheng Holdings Limited</span>（06/05）：整体协调人公告－委任、申请版本（第一次呈交）</li>
-                    <li><span class="ft-accent">廈門科拓通訊技術股份有限公司</span>（05/05）：整体协调人公告－委任、申请版本（第一次呈交）</li>
-                    <li><span class="ft-accent">江西生物製品研究所股份有限公司</span>（04/05）：整体协调人公告－委任、申请版本（第一次呈交）</li>
-                    <li><span class="ft-accent">杭州千島湖鱘龍科技股份有限公司</span>（04/05）：整体协调人公告－委任、申请版本（第一次呈交）</li>
+            <div class="card-bg" style="padding: 28px 32px;">
+                <p style="margin-bottom: 16px; font-size: 15.5px;">港股5月6日随A股走强，<span class="ft-accent">恒生指数上涨1.22%</span>，恒生科技指数受AI半导体板块带动同步走强。</p>
+                <h4 style="margin: 20px 0 12px; font-size: 16px;">新上市申请动态（AP &amp; PHIP，截至5月6日）</h4>
+                <ul style="padding-left: 20px; line-height: 1.7;">
+                    <li><strong>Yusheng Holdings Limited</strong>（06/05/2026）——整体协调人公告－委任、申请版本（第一次呈交）</li>
+                    <li><strong>厦门科拓通讯技术股份有限公司</strong>（05/05/2026）——整体协调人公告－委任、申请版本（第一次呈交）</li>
+                    <li><strong>江西生物制品研究所股份有限公司</strong>（04/05/2026）——整体协调人公告－委任、申请版本（第一次呈交）</li>
+                    <li><strong>杭州千岛湖鱘龙科技股份有限公司</strong>（04/05/2026）——整体协调人公告－委任、申请版本（第一次呈交）</li>
                 </ul>
             </div>
         </section>
 
         <!-- 三、上交所发行上市动态 -->
-        <section id="sse">
+        <section id="sse" class="section">
             <h2 class="section-header">三、上交所发行上市动态</h2>
-            <div class="card-bg">
-                <p style="margin-bottom:18px;"><span class="ft-accent">上交所最新发行上市动态</span>（2026-05-06披露为主）：</p>
-                <ul style="padding-left:26px;line-height:1.85;">
-                    <li><span class="ft-accent">锐石创芯（重庆）科技股份有限公司</span>：科创板首次公开发行股票招股说明书（申报稿）</li>
-                    <li><span class="ft-accent">上海兆芯集成电路股份有限公司</span>：8-1-2 发行人及中介机构关于第二轮审核问询函的回复</li>
-                    <li><span class="ft-accent">天博智能科技（山东）股份有限公司</span>：8-1 发行人及中介机构关于首轮审核问询函的回复</li>
-                    <li>其他在审重点项目：上海频准激光科技股份有限公司、国仪量子技术（合肥）股份有限公司、深之蓝海洋科技股份有限公司、深圳核心医疗科技股份有限公司、上海燧原科技股份有限公司等，涵盖半导体、量子、激光、海洋科技及医疗器械等硬科技领域。</li>
+            <div class="card-bg" style="padding: 28px 32px;">
+                <p style="margin-bottom: 16px;"><strong>2026年5月6日披露重点</strong></p>
+                <ul style="padding-left: 20px; line-height: 1.75;">
+                    <li><strong>锐石创芯（重庆）科技股份有限公司</strong> —— 科创板首次公开发行股票招股说明书（申报稿）</li>
+                    <li><strong>上海兆芯集成电路股份有限公司</strong> —— 8-1-2 发行人及中介机构关于第二轮审核问询函的回复</li>
+                    <li><strong>天博智能科技（山东）股份有限公司</strong> —— 8-1 发行人及中介机构关于首轮审核问询函的回复</li>
+                    <li>其他在审项目包括上海频准激光科技、国仪量子技术（合肥）、深之蓝海洋科技、深圳核心医疗科技等，涵盖半导体、量子、激光、海洋科技及医疗器械领域。</li>
                 </ul>
             </div>
         </section>
 
-        <!-- 四、资本市场新闻（大幅扩充） -->
-        <section id="news">
+        <!-- 四、资本市场新闻 -->
+        <section id="news" class="section">
             <h2 class="section-header">四、资本市场新闻</h2>
             <div class="news-grid">
-
-                <!-- Card 1 -->
+                
+                <!-- 卡片1 -->
                 <div class="news-card">
-                    <h3>🚀 AI半导体与硬件基础设施</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li><span class="ft-accent">Nvidia</span>投资Corning 5亿美元，双方合作在北卡罗来纳州与得州新建三座先进光纤工厂，美国产能提升10倍，Corning美股盘前暴涨近20%</li>
-                        <li><span class="ft-accent">AMD</span> CEO Lisa Su CNBC采访：Q1数据中心收入增长57% YoY，AI代理驱动周期，股价暴涨超19%</li>
-                        <li><span class="ft-accent">台积电</span>股价大涨5.04%刷新纪录新高，总市值达2.15万亿美元</li>
-                        <li>OpenAI与Microsoft、AMD、Broadcom、Nvidia、Intel合作推出Multipath Reliable Connection (MRC)协议</li>
+                    <h3>📡 AI半导体与基础设施</h3>
+                    <ul>
+                        <li><strong>Nvidia投资Corning 5亿美元</strong>，双方将在北卡罗来纳与得州新建三座先进光纤制造工厂，美国产能提升10倍，Corning盘前暴涨近18-20%。</li>
+                        <li><strong>AMD CEO Lisa Su</strong> CNBC专访：AI代理驱动数据中心收入同比增57%，芯片需求强劲。</li>
+                        <li><strong>台积电股价大涨5.04%</strong>，刷新历史新高，总市值达2.15万亿美元。</li>
+                        <li>OpenAI联合Microsoft、AMD、Broadcom、Nvidia、Intel推出MRC协议，助力大规模计算。</li>
                     </ul>
                 </div>
-
-                <!-- Card 2 -->
+                
+                <!-- 卡片2 -->
+                <div class="news-card">
+                    <h3>🚀 融资与估值动态</h3>
+                    <ul>
+                        <li><strong>DeepSeek</strong>与国家大基金洽谈首轮融资，投后估值有望达450亿美元，多家互联网巨头与国资基金同时参与。</li>
+                        <li>芬兰AI实验室QuTwo完成2,500万欧元天使轮，估值3.25亿欧元。</li>
+                        <li>SpaceX拟投资550亿美元在得州建设Terafab芯片工厂，总资本开支或达1,190亿美元。</li>
+                    </ul>
+                </div>
+                
+                <!-- 卡片3 -->
+                <div class="news-card">
+                    <h3>📊 财报亮点</h3>
+                    <ul>
+                        <li><strong>Uber</strong> Q1营收132亿美元（+14% YoY），Gross Bookings增长25%。</li>
+                        <li><strong>Instacart</strong> Q1营收10.2亿美元（+14% YoY），GTV增长13%。</li>
+                        <li>美股大型科技股盘前多数上涨，康宁（Corning）涨近18%，美光科技涨超4%，英特尔涨超3%。</li>
+                    </ul>
+                </div>
+                
+                <!-- 卡片4 -->
                 <div class="news-card">
                     <h3>🤖 机器人与具身智能</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li>WaiV Robotics从隐身模式亮相，获750万美元融资，专注海上无人机起降系统</li>
-                        <li>Tutor Intelligence构建真实世界机器人AI数据工厂，在总部运行100台Sonny半人形机器人</li>
-                        <li>ABB Robotics推出OmniVance自主表面精加工单元；NORD Drivesystems发布新型电机启动器与变频驱动器</li>
-                        <li>Hiroshi Fujiwara和Robert Little获2026 Joseph F. Engelberger Robotics Awards</li>
+                    <ul>
+                        <li>WaiV Robotics获750万美元融资，专注海上无人机起降系统。</li>
+                        <li>Tutor Intelligence构建真实世界机器人AI数据工厂，运行100台Sonny半人形机器人。</li>
+                        <li>ABB Robotics推出OmniVance自主表面精加工单元；NORD Drivesystems发布新型电机启动器。</li>
                     </ul>
                 </div>
-
-                <!-- Card 3 -->
+                
+                <!-- 卡片5 -->
                 <div class="news-card">
-                    <h3>💰 融资与估值动态</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li><span class="ft-accent">DeepSeek</span>与国家大基金洽谈首轮融资，投后估值或达450亿美元，多家互联网巨头与国资基金参与</li>
-                        <li>芬兰AI实验室QuTwo完成2,500万欧元天使轮，估值3.25亿欧元</li>
-                        <li>Hut 8签署95.8亿美元长期租赁协议，为高等级公司提供算力</li>
-                        <li>Stack Infrastructure考虑出售亚洲数据中心业务，交易规模或达300亿美元</li>
+                    <h3>📜 政策与监管</h3>
+                    <ul>
+                        <li>美国财政部宣布季度再融资规模1,250亿美元。</li>
+                        <li>元道通信公告被证监会立案调查进展，涉嫌年报虚假记载。</li>
+                        <li>Anthropic高管下周访韩，与韩国政府共商AI安全风险防范方案。</li>
+                        <li>印尼考虑对16岁以下人群实施“网购禁令”。</li>
                     </ul>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="news-card">
-                    <h3>📈 企业财报亮点</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li><span class="ft-accent">Uber</span> Q1营收132亿美元（+14% YoY），总预订量增长25%，盘前表现强劲</li>
-                        <li><span class="ft-accent">Instacart</span> Q1营收10.2亿美元（+14% YoY），GTV增长13%，订单增长10%</li>
-                        <li>DoorDash Q1营收增长33% YoY，Q2指引乐观</li>
-                        <li>Instacart、Uber等消费类平台业绩均显示用户对性价比的关注</li>
-                    </ul>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="news-card">
-                    <h3>📄 监管与政策动态</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li><span class="ft-accent">元道通信</span>公告因年报虚假记载被证监会立案调查，调查仍在进行中</li>
-                        <li>美国财政部宣布季度再融资规模1,250亿美元</li>
-                        <li>Anthropic高管下周访韩，与韩国政府共商AI安全风险防范方案</li>
-                        <li>印尼政府考虑对16岁以下人群实施“网购禁令”</li>
-                    </ul>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="news-card">
-                    <h3>🔬 大模型与应用进展</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li>火山引擎Doubao-Seed-2.0-lite升级为豆包家族首款全模态理解模型，支持视频/图像/音频/文本原生统一理解</li>
-                        <li>SpaceX拟投资550亿美元在得州建设Terafab芯片工厂，总资本开支或达1,190亿美元</li>
-                        <li>Corning与Nvidia合作扩产光纤，助力AI基础设施建设</li>
-                    </ul>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="news-card">
-                    <h3>🌍 国际科技动态</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li>Middle East &amp; North Africa Q1初创融资持平于7.99亿美元，沙特VC持续募资</li>
-                        <li>DeFi领域因黑客事件资金流出140亿美元</li>
-                        <li>LinkedIn CEO Ryan Roslansky将领导微软新工作体验集团</li>
-                    </ul>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="news-card">
-                    <h3>📰 最新科技人物访谈预告</h3>
-                    <ul style="padding-left:22px;line-height:1.75;">
-                        <li>VALUExBRK 2026会议：Bill Ackman、Mohnish Pabrai等讨论AI、永久资本与长期投资</li>
-                        <li>Airbnb CEO Brian Chesky谈“AI Founder Mode”</li>
-                        <li>AMD CEO Lisa Su深度解读AI计算需求</li>
-                    </ul>
-                </div>
-
             </div>
         </section>
 
         <!-- 五、关键数据一览 -->
-        <section id="data">
+        <section id="data" class="section">
             <h2 class="section-header">五、关键数据一览</h2>
             <div class="card-bg">
                 <table>
                     <thead>
                         <tr>
                             <th>指标</th>
-                            <th style="text-align:right;">数值</th>
+                            <th style="text-align:right">数值</th>
                             <th>备注</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>两市融资余额</td><td style="text-align:right;" class="ft-accent">27,282.33亿元</td><td>增加410.83亿元</td></tr>
-                        <tr><td>DeepSeek投后估值（洽谈中）</td><td style="text-align:right;" class="ft-accent">450亿美元</td><td>国家大基金主导</td></tr>
-                        <tr><td>Nvidia-Corning投资</td><td style="text-align:right;" class="ft-accent">5亿美元</td><td>光纤工厂扩产，美国产能×10</td></tr>
-                        <tr><td>AMD市值</td><td style="text-align:right;" class="ft-accent">≈6,951亿美元</td><td>股价+20.02%</td></tr>
-                        <tr><td>台积电市值</td><td style="text-align:right;" class="ft-accent">2.15万亿美元</td><td>股价+5.04%</td></tr>
-                        <tr><td>SpaceX Terafab芯片工厂投资</td><td style="text-align:right;" class="ft-accent">≥550亿美元</td><td>总开支或达1,190亿美元</td></tr>
-                        <tr><td>黄金涨幅</td><td style="text-align:right;" class="ft-accent">+2.8-3.4%</td><td>避险需求强劲</td></tr>
-                        <tr><td>Corning盘前涨幅</td><td style="text-align:right;" class="ft-accent">近20%</td><td>Nvidia合作催化</td></tr>
+                        <tr>
+                            <td>两市融资余额</td>
+                            <td style="text-align:right">27,282.33亿元</td>
+                            <td>单日增加410.83亿元</td>
+                        </tr>
+                        <tr>
+                            <td>DeepSeek投后估值（洽谈中）</td>
+                            <td style="text-align:right">450亿美元</td>
+                            <td>国家大基金主导</td>
+                        </tr>
+                        <tr>
+                            <td>Nvidia-Corning合作投资</td>
+                            <td style="text-align:right">5亿美元</td>
+                            <td>AI光纤工厂扩产</td>
+                        </tr>
+                        <tr>
+                            <td>AMD股价涨幅</td>
+                            <td style="text-align:right">+19%</td>
+                            <td>财报后表现</td>
+                        </tr>
+                        <tr>
+                            <td>台积电总市值</td>
+                            <td style="text-align:right">2.15万亿美元</td>
+                            <td>股价刷新纪录</td>
+                        </tr>
+                        <tr>
+                            <td>SpaceX芯片工厂拟投资</td>
+                            <td style="text-align:right">550亿美元+</td>
+                            <td>总开支或达1,190亿美元</td>
+                        </tr>
+                        <tr>
+                            <td>黄金价格涨幅</td>
+                            <td style="text-align:right">+2.8-3.4%</td>
+                            <td>避险需求强劲</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- 信息来源 & 免责声明 -->
-        <div class="card-bg" style="margin:40px 0 28px;">
-            <strong style="display:block;margin-bottom:12px;color:var(--accent);">信息来源</strong>
-            <p style="font-size:14.5px;color:#555;margin-bottom:22px;">Yahoo Finance、Investing.com、CNBC、36氪、科创板日报、Techmeme、The Robot Report、Bloomberg、上交所官网等公开渠道。数据截至北京时间2026年5月7日早6点。</p>
+        <!-- 六、最新科技人物访谈 -->
+        <section class="section">
+            <h2 class="section-header">六、最新科技人物访谈</h2>
             
-            <strong style="display:block;margin-bottom:8px;color:var(--accent);">免责声明</strong>
-            <p style="font-size:13.5px;color:#555;">本报告仅供参考，不构成任何投资建议。市场实时波动，请以官方来源为准。投资者应自行核实并审慎决策。</p>
+            <div class="interview-item">
+                <strong>1. VALUExBRK 2026 投资者会议（Omaha）</strong><br>
+                参与者：Bill Ackman、Mohnish Pabrai、Tom Gayner等。讨论AI代理、品牌投资、永久资本与长期教训。YouTube全程录像已上线（5月6日）。
+            </div>
+            
+            <div class="interview-item">
+                <strong>2. Brian Chesky（Airbnb CEO）——《Invest Like the Best》播客</strong><br>
+                主题：“AI Founder Mode”。探讨创始人领导力演变、AI在消费者体验中的作用及11星体验框架（5月5日发布）。
+            </div>
+            
+            <div class="interview-item">
+                <strong>3. Lisa Su（AMD CEO）——CNBC专访</strong><br>
+                Q1财报后聚焦AI计算需求、代理驱动周期及数据中心57% YoY增长（5月6日上午发布）。
+            </div>
+        </section>
+
+        <!-- 信息来源 & 免责声明 -->
+        <div class="card-bg" style="margin: 40px 0 32px; padding: 28px 32px; font-size: 14px;">
+            <strong style="display: block; margin-bottom: 8px; color: var(--accent);">信息来源</strong>
+            36氪、科创板日报、Techmeme、The Robot Report、Bloomberg、Yahoo Finance、上交所官网、CNBC等公开渠道。<br>
+            数据截至北京时间2026年5月7日早6点，受交易时段与假期影响，最终以官方来源为准。
+            
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #d4d4d4; font-size: 13px;">
+                <strong>免责声明：</strong>本报告仅供参考，不构成任何投资建议。市场有风险，投资需谨慎。请以原始数据来源为准。
+            </div>
         </div>
 
-    </div>
-
-    <!-- 底部版权 -->
-    <div class="footer">
-        <div class="container">
-            © 2026 FT资本市场早间快报 · 由Grok生成 · 严格遵循FT.com极简专业报纸风格 · 数据更新于2026年5月7日
+        <!-- 底部版权 -->
+        <div class="footer">
+            © 2026 FT资本市场早间快报 · 专业·及时·独立<br>
+            本网页由Grok生成 · 严格遵循FT.com极简专业风格 · 可直接保存为HTML离线浏览
         </div>
     </div>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        function refreshData() {
+            const btn = document.querySelector('.refresh-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '🔄 正在更新...';
+            btn.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+                alert('✅ 数据已刷新（模拟）\n\n最新快照：美股科技板块继续强势，黄金维持高位。');
+            }, 1600);
+        }
+        
+        // 目录平滑滚动
+        document.querySelectorAll('.directory-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
-        console.log('%c✅ 资本市场早间快报 2026年5月7日 已重新生成（新闻内容全面升级）', 'color:#002f5f;font-weight:700;');
     </script>
 </body>
 </html>
