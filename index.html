@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -9,81 +10,114 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+        
         body {
-            font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: Georgia, 'Noto Sans SC', serif;
         }
+        
+        /* 米白底 + 古铜金配色 */
         .report-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+            background: linear-gradient(135deg, #d4b88a 0%, #c9a66b 100%);
+            box-shadow: 0 4px 12px -2px rgba(201, 166, 107, 0.3);
         }
-        .nav-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        .main-bg {
+            background-color: #f8f4eb;
         }
-        .nav-link:hover {
-            transform: translateX(4px);
-            color: #22d3ee;
+        
+        .card-bg {
+            background-color: #f8f4eb;
+            border: 1px solid #d4b88a;
         }
-        table {
-            border-collapse: collapse;
+        
+        .accent-gold {
+            color: #c9a66b;
         }
-        th, td {
-            border-bottom: 1px solid #334155;
+        
+        .deep-bronze {
+            color: #3f2a1e;
         }
+        
         .section-header {
             position: relative;
+            color: #3f2a1e;
         }
+        
         .section-header::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: -4px;
             left: 0;
-            width: 48px;
+            width: 56px;
             height: 3px;
-            background: linear-gradient(to right, #22d3ee, #67e8f9);
+            background: linear-gradient(to right, #c9a66b, #b38b4d);
         }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border-bottom: 1px solid #d4b88a;
+        }
+        
+        .prose {
+            color: #3f2a1e;
+        }
+        
+        .prose strong {
+            color: #c9a66b;
+        }
+        
         /* 移动端优化 */
         @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
-            .main-content {
-                padding: 1rem;
-            }
             table {
                 font-size: 14px;
             }
             .prose {
-                font-size: 15.5px;
-                line-height: 1.7;
+                font-size: 16px;
+                line-height: 1.75;
             }
         }
-        /* 卡片悬浮效果 */
+        
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #3f2a1e;
+        }
+        
+        .nav-link:hover {
+            color: #c9a66b;
+            transform: translateX(4px);
+        }
+        
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         .card-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(201, 166, 107, 0.15);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200">
+<body class="main-bg text-[#3f2a1e]">
     <div class="max-w-5xl mx-auto">
         <!-- 头部 -->
-        <div class="report-header text-white py-6 px-6 border-b border-slate-700 sticky top-0 z-50 shadow-md">
+        <div class="report-header text-[#3f2a1e] py-6 px-6 border-b border-[#b38b4d] sticky top-0 z-50">
             <div class="flex items-center justify-between">
                 <div class="flex-1">
                     <h1 class="text-3xl font-bold tracking-tight">【资本市场早间快报】</h1>
-                    <p class="text-2xl text-cyan-300 mt-1">2026年5月7日</p>
-                    <p class="text-slate-400 text-xs mt-2 flex items-center gap-1">
-                        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    <p class="text-2xl text-[#3f2a1e] mt-1">2026年5月7日</p>
+                    <p class="text-[#5c4633] text-xs mt-2 flex items-center gap-1">
+                        <span class="w-2 h-2 bg-[#c9a66b] rounded-full animate-pulse"></span>
                         截至北京时间 2026 年 5 月 7 日早 6 点 · 美股 5 月 6 日收盘
                     </p>
                 </div>
                 <div class="text-right">
                     <a href="#" onclick="window.location.reload()" 
-                       class="inline-flex items-center gap-2 bg-slate-900/70 hover:bg-slate-900 px-4 py-2 rounded-2xl text-sm font-medium">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.058 11H1M12 3v2m0 16v2m9-9H15m-6 0a8 8 0 01-7.714-6.192M12 19.5a7.5 7.5 0 01-7.5-7.5" />
+                       class="inline-flex items-center gap-2 bg-[#f8f4eb] hover:bg-white px-5 py-2.5 rounded-2xl text-sm font-medium border border-[#d4b88a]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#c9a66b" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.058 11H1M12 3v2m0 16v2m9-9H15m-6 0a8 8 0 01-7.714-6.192M12 19.5a7.5 7.5 0 01-7.5-7.5" />
                         </svg>
                         刷新
                     </a>
@@ -92,40 +126,39 @@
         </div>
 
         <div class="flex">
-            <!-- 左侧导航（大屏显示） -->
-            <div class="w-64 bg-slate-900 border-r border-slate-700 p-6 hidden lg:flex flex-col">
+            <!-- 左侧导航（大屏） -->
+            <div class="w-64 bg-[#f8f4eb] border-r border-[#d4b88a] p-6 hidden lg:flex flex-col">
                 <div class="sticky top-6">
                     <nav class="space-y-1">
-                        <a href="#overview" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">整体趋势</a>
-                        <a href="#global" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">一、全球市场概览</a>
-                        <a href="#hk" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">二、港股市场与交表动态</a>
-                        <a href="#sse" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">三、上交所发行上市动态</a>
-                        <a href="#news" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">四、资本市场新闻</a>
-                        <a href="#data" class="nav-link flex items-center gap-3 text-slate-300 hover:text-cyan-300 py-3 px-4 rounded-2xl">五、关键数据一览</a>
+                        <a href="#overview" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">整体趋势</a>
+                        <a href="#global" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">一、全球市场概览</a>
+                        <a href="#hk" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">二、港股市场与交表动态</a>
+                        <a href="#sse" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">三、上交所发行上市动态</a>
+                        <a href="#news" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">四、资本市场新闻</a>
+                        <a href="#data" class="nav-link flex items-center gap-3 py-3 px-4 rounded-2xl">五、关键数据一览</a>
                     </nav>
                     
-                    <div class="mt-12 pt-8 border-t border-slate-700">
-                        <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">信息来源</p>
+                    <div class="mt-12 pt-8 border-t border-[#d4b88a]">
+                        <p class="text-xs uppercase tracking-widest text-[#8c6f4e] mb-3">信息来源</p>
                         <div class="flex flex-wrap gap-2 text-[10px]">
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">36氪</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">科创板日报</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">Techmeme</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">The Robot Report</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">Bloomberg</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">Yahoo Finance</span>
-                            <span class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded-lg">上交所</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">36氪</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">科创板日报</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">Techmeme</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">The Robot Report</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">Bloomberg</span>
+                            <span class="bg-white text-[#5c4633] px-3 py-1 rounded-lg border border-[#d4b88a]">上交所</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 主要内容（手机端优化） -->
+            <!-- 主要内容 -->
             <div class="flex-1 main-content p-5 lg:p-8">
                 
                 <!-- 整体趋势 -->
                 <section id="overview" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">整体趋势</h2>
-                    <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed text-[15.5px]">
+                    <h2 class="section-header text-3xl font-semibold mb-6">整体趋势</h2>
+                    <div class="prose prose-invert max-w-none leading-relaxed text-[16px]">
                         <p>截至北京时间2026年5月7日早6点（对应美股5月6日收盘、欧洲/亚洲多数市场5月6日或最近交易日），全球资本市场呈现科技与成长股领涨的强势格局。美股三大指数集体收涨，<strong>标普500报7,365.12点（+1.46%）</strong>、<strong>纳斯达克100涨2.08%</strong>、<strong>道琼斯涨1.24%</strong>，均创近期新高，科技股成为绝对主线；欧洲市场反弹强劲，<strong>EURO STOXX 50涨2.68%</strong>、<strong>DAX 40涨2.12%</strong>、<strong>FTSE 100涨2.15%</strong>，能源与银行板块贡献突出。亚洲市场分化中走强，中国<strong>上证综指报4,160.17点（+1.17%）</strong>、<strong>恒生指数报26,213.78点（+1.22%）</strong>，港股科技指数同步上行；<strong>日经225突破62,000点、盘中涨4.2%。</strong></p>
                         <p>债券温和，<strong>Bloomberg US Aggregate涨0.19%</strong>；大宗商品避险情绪升温，<strong>黄金大涨2.8-3.4%</strong>、白银涨约5%。科技硬件与AI基础设施成为最大亮点：<strong>Nvidia投资Corning 5亿美元</strong>推动后者美股盘前<strong>飙涨近18-20%</strong>，双方宣布在北卡与得州新建三座先进光纤工厂；<strong>AMD股价暴涨20.02%至纪录新高（总市值逼近7,000亿美元）</strong>，CEO Lisa Su强调AI代理驱动数据中心营收57% YoY增长；<strong>台积电涨5.04%刷新纪录，总市值2.15万亿美元</strong>。</p>
                         <p>AI领域融资与应用加速落地：DeepSeek正与国家大基金等洽谈<strong>30-40亿美元首轮融资，投后估值或达450-500亿美元</strong>；Anthropic与SpaceX达成Colossus 1全部算力合作，并升级Claude Code限额与“dreaming”智能体；火山引擎Doubao-Seed-2.0-lite实现全模态理解升级。机器人与具身智能持续突破，1X启动NEO人形机器人加州量产、Genesis AI发布GENE-26.5灵巧模型。财报季亮点频现，Uber、Instacart、DoorDash、Arm等Q1营收均超预期或指引上调。</p>
@@ -135,32 +168,32 @@
 
                 <!-- 全球市场概览 -->
                 <section id="global" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">一、全球市场概览</h2>
-                    <div class="bg-slate-900 rounded-3xl p-1 shadow-inner overflow-x-auto">
+                    <h2 class="section-header text-3xl font-semibold mb-6">一、全球市场概览</h2>
+                    <div class="card-bg rounded-3xl p-1 shadow-inner overflow-x-auto">
                         <table class="w-full text-sm min-w-[640px]">
                             <thead>
-                                <tr class="border-b border-slate-700">
-                                    <th class="text-left py-5 px-6 font-medium text-slate-400">类别</th>
-                                    <th class="text-left py-5 px-6 font-medium text-slate-400">指数</th>
-                                    <th class="text-right py-5 px-6 font-medium text-slate-400">最新收盘</th>
-                                    <th class="text-right py-5 px-6 font-medium text-slate-400">涨跌 (点数)</th>
-                                    <th class="text-right py-5 px-6 font-medium text-slate-400">涨跌 (%)</th>
-                                    <th class="text-left py-5 px-6 font-medium text-slate-400">备注</th>
+                                <tr class="border-b border-[#d4b88a]">
+                                    <th class="text-left py-5 px-6 font-medium text-[#5c4633]">类别</th>
+                                    <th class="text-left py-5 px-6 font-medium text-[#5c4633]">指数</th>
+                                    <th class="text-right py-5 px-6 font-medium text-[#5c4633]">最新收盘</th>
+                                    <th class="text-right py-5 px-6 font-medium text-[#5c4633]">涨跌 (点数)</th>
+                                    <th class="text-right py-5 px-6 font-medium text-[#5c4633]">涨跌 (%)</th>
+                                    <th class="text-left py-5 px-6 font-medium text-[#5c4633]">备注</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-700">
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">标普 500 (S&amp;P 500)</td><td class="text-right py-4 px-6 font-semibold">7,365.12</td><td class="text-right py-4 px-6 text-emerald-400">+105.90</td><td class="text-right py-4 px-6 text-emerald-400">+1.46%</td><td class="py-4 px-6 text-slate-400">美东5/6收盘，创近期新高</td></tr>
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">纳斯达克 100 (Nasdaq 100)</td><td class="text-right py-4 px-6 font-semibold">≈28,599</td><td class="text-right py-4 px-6 text-emerald-400">+584</td><td class="text-right py-4 px-6 text-emerald-400">+2.08%</td><td class="py-4 px-6 text-slate-400">科技股领涨</td></tr>
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">道琼斯 (DJIA)</td><td class="text-right py-4 px-6 font-semibold">49,910.59</td><td class="text-right py-4 px-6 text-emerald-400">+612.34</td><td class="text-right py-4 px-6 text-emerald-400">+1.24%</td><td class="py-4 px-6 text-slate-400">广泛上涨</td></tr>
-                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">欧洲斯托克 50 (EURO STOXX 50)</td><td class="text-right py-4 px-6 font-semibold">≈6,027</td><td class="text-right py-4 px-6 text-emerald-400">+157.50</td><td class="text-right py-4 px-6 text-emerald-400">+2.68%</td><td class="py-4 px-6 text-slate-400">近期收盘</td></tr>
-                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">英国富时 100 (FTSE 100)</td><td class="text-right py-4 px-6 font-semibold">≈10,438</td><td class="text-right py-4 px-6 text-emerald-400">+219.55</td><td class="text-right py-4 px-6 text-emerald-400">+2.15%</td><td class="py-4 px-6 text-slate-400">5/6交易中/收盘上涨</td></tr>
-                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">德国 DAX 40</td><td class="text-right py-4 px-6 font-semibold">24,918.69</td><td class="text-right py-4 px-6 text-emerald-400">+516.99</td><td class="text-right py-4 px-6 text-emerald-400">+2.12%</td><td class="py-4 px-6 text-slate-400">强势反弹</td></tr>
-                                <tr><td class="py-4 px-6">日本</td><td class="py-4 px-6">日经 225 (Nikkei 225)</td><td class="text-right py-4 px-6 font-semibold">59,513.12</td><td class="text-right py-4 px-6 text-emerald-400">+228.22</td><td class="text-right py-4 px-6 text-emerald-400">+0.38%</td><td class="py-4 px-6 text-slate-400">5/7早盘突破62,000点、涨4.2%</td></tr>
-                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">上证综指 (SSE Composite)</td><td class="text-right py-4 px-6 font-semibold">4,160.17</td><td class="text-right py-4 px-6 text-emerald-400">+48.01</td><td class="text-right py-4 px-6 text-emerald-400">+1.17%</td><td class="py-4 px-6 text-slate-400">5/6收盘，两月高点</td></tr>
-                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">恒生指数 (Hang Seng)</td><td class="text-right py-4 px-6 font-semibold">26,213.78</td><td class="text-right py-4 px-6 text-emerald-400">+315.17</td><td class="text-right py-4 px-6 text-emerald-400">+1.22%</td><td class="py-4 px-6 text-slate-400">5/6收盘</td></tr>
-                                <tr><td class="py-4 px-6">全球与新兴</td><td class="py-4 px-6">MSCI ACWI</td><td class="text-right py-4 px-6 font-semibold">≈1,077-1,085</td><td class="text-right py-4 px-6 text-emerald-400">—</td><td class="text-right py-4 px-6 text-emerald-400">+约0.5-1%</td><td class="py-4 px-6 text-slate-400">全球股票广泛上涨</td></tr>
-                                <tr><td class="py-4 px-6">债券</td><td class="py-4 px-6">Bloomberg US Aggregate</td><td class="text-right py-4 px-6 font-semibold">≈2,349.95</td><td class="text-right py-4 px-6 text-emerald-400">+4.45</td><td class="text-right py-4 px-6 text-emerald-400">+0.19%</td><td class="py-4 px-6 text-slate-400">5/5数据，温和上涨</td></tr>
-                                <tr><td class="py-4 px-6">大宗商品</td><td class="py-4 px-6">黄金 (USD/oz)</td><td class="text-right py-4 px-6 font-semibold">≈4,690-4,710</td><td class="text-right py-4 px-6 text-emerald-400">+130-150</td><td class="text-right py-4 px-6 text-emerald-400">+2.8-3.4%</td><td class="py-4 px-6 text-slate-400">避险需求强劲</td></tr>
+                            <tbody class="divide-y divide-[#d4b88a]">
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">标普 500 (S&amp;P 500)</td><td class="text-right py-4 px-6 font-semibold">7,365.12</td><td class="text-right py-4 px-6 text-[#c9a66b]">+105.90</td><td class="text-right py-4 px-6 text-[#c9a66b]">+1.46%</td><td class="py-4 px-6">美东5/6收盘，创近期新高</td></tr>
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">纳斯达克 100 (Nasdaq 100)</td><td class="text-right py-4 px-6 font-semibold">≈28,599</td><td class="text-right py-4 px-6 text-[#c9a66b]">+584</td><td class="text-right py-4 px-6 text-[#c9a66b]">+2.08%</td><td class="py-4 px-6">科技股领涨</td></tr>
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">道琼斯 (DJIA)</td><td class="text-right py-4 px-6 font-semibold">49,910.59</td><td class="text-right py-4 px-6 text-[#c9a66b]">+612.34</td><td class="text-right py-4 px-6 text-[#c9a66b]">+1.24%</td><td class="py-4 px-6">广泛上涨</td></tr>
+                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">欧洲斯托克 50 (EURO STOXX 50)</td><td class="text-right py-4 px-6 font-semibold">≈6,027</td><td class="text-right py-4 px-6 text-[#c9a66b]">+157.50</td><td class="text-right py-4 px-6 text-[#c9a66b]">+2.68%</td><td class="py-4 px-6">近期收盘</td></tr>
+                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">英国富时 100 (FTSE 100)</td><td class="text-right py-4 px-6 font-semibold">≈10,438</td><td class="text-right py-4 px-6 text-[#c9a66b]">+219.55</td><td class="text-right py-4 px-6 text-[#c9a66b]">+2.15%</td><td class="py-4 px-6">5/6交易中/收盘上涨</td></tr>
+                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">德国 DAX 40</td><td class="text-right py-4 px-6 font-semibold">24,918.69</td><td class="text-right py-4 px-6 text-[#c9a66b]">+516.99</td><td class="text-right py-4 px-6 text-[#c9a66b]">+2.12%</td><td class="py-4 px-6">强势反弹</td></tr>
+                                <tr><td class="py-4 px-6">日本</td><td class="py-4 px-6">日经 225 (Nikkei 225)</td><td class="text-right py-4 px-6 font-semibold">59,513.12</td><td class="text-right py-4 px-6 text-[#c9a66b]">+228.22</td><td class="text-right py-4 px-6 text-[#c9a66b]">+0.38%</td><td class="py-4 px-6">5/7早盘突破62,000点、涨4.2%</td></tr>
+                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">上证综指 (SSE Composite)</td><td class="text-right py-4 px-6 font-semibold">4,160.17</td><td class="text-right py-4 px-6 text-[#c9a66b]">+48.01</td><td class="text-right py-4 px-6 text-[#c9a66b]">+1.17%</td><td class="py-4 px-6">5/6收盘，两月高点</td></tr>
+                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">恒生指数 (Hang Seng)</td><td class="text-right py-4 px-6 font-semibold">26,213.78</td><td class="text-right py-4 px-6 text-[#c9a66b]">+315.17</td><td class="text-right py-4 px-6 text-[#c9a66b]">+1.22%</td><td class="py-4 px-6">5/6收盘</td></tr>
+                                <tr><td class="py-4 px-6">全球与新兴</td><td class="py-4 px-6">MSCI ACWI</td><td class="text-right py-4 px-6 font-semibold">≈1,077-1,085</td><td class="text-right py-4 px-6 text-[#c9a66b]">—</td><td class="text-right py-4 px-6 text-[#c9a66b]">+约0.5-1%</td><td class="py-4 px-6">全球股票广泛上涨</td></tr>
+                                <tr><td class="py-4 px-6">债券</td><td class="py-4 px-6">Bloomberg US Aggregate</td><td class="text-right py-4 px-6 font-semibold">≈2,349.95</td><td class="text-right py-4 px-6 text-[#c9a66b]">+4.45</td><td class="text-right py-4 px-6 text-[#c9a66b]">+0.19%</td><td class="py-4 px-6">5/5数据，温和上涨</td></tr>
+                                <tr><td class="py-4 px-6">大宗商品</td><td class="py-4 px-6">黄金 (USD/oz)</td><td class="text-right py-4 px-6 font-semibold">≈4,690-4,710</td><td class="text-right py-4 px-6 text-[#c9a66b]">+130-150</td><td class="text-right py-4 px-6 text-[#c9a66b]">+2.8-3.4%</td><td class="py-4 px-6">避险需求强劲</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -168,11 +201,11 @@
 
                 <!-- 港股市场与交表动态 -->
                 <section id="hk" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">二、港股市场与交表动态</h2>
+                    <h2 class="section-header text-3xl font-semibold mb-6">二、港股市场与交表动态</h2>
                     <div class="prose prose-invert max-w-none">
                         <p class="mb-4">港股市场5月6日随A股走强，<strong>恒生指数涨1.22%</strong>，恒生科技指数同步受益AI与半导体板块拉动。</p>
                         <p class="font-medium mb-3">新上市申请动态（AP &amp; PHIP，截至5月6日最新披露）：</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-300 text-[15px]">
+                        <ul class="list-disc pl-6 space-y-2 text-[#3f2a1e] text-[15.5px]">
                             <li><strong>Yusheng Holdings Limited</strong>（06/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
                             <li><strong>科興生物製藥股份有限公司</strong>（06/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
                             <li><strong>廈門科拓通訊技術股份有限公司</strong>（05/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
@@ -184,10 +217,10 @@
 
                 <!-- 上交所发行上市动态 -->
                 <section id="sse" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">三、上交所发行上市动态</h2>
+                    <h2 class="section-header text-3xl font-semibold mb-6">三、上交所发行上市动态</h2>
                     <div class="prose prose-invert">
                         <p><strong>上交所最新发行上市动态（2026-05-06披露为主）</strong>：</p>
-                        <ul class="list-disc pl-6 space-y-2 text-slate-300 text-[15px]">
+                        <ul class="list-disc pl-6 space-y-2 text-[#3f2a1e] text-[15.5px]">
                             <li><strong>锐石创芯（重庆）科技股份有限公司</strong>：科创板首次公开发行股票招股说明书（申报稿）。</li>
                             <li><strong>上海兆芯集成电路股份有限公司</strong>：8-1-2 发行人及中介机构关于第二轮审核问询函的回复。</li>
                             <li><strong>天博智能科技（山东）股份有限公司</strong>：8-1 发行人及中介机构关于首轮审核问询函的回复。</li>
@@ -198,13 +231,12 @@
 
                 <!-- 资本市场新闻 -->
                 <section id="news" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-8 text-white">四、资本市场新闻</h2>
+                    <h2 class="section-header text-3xl font-semibold mb-8">四、资本市场新闻</h2>
                     
                     <div class="space-y-12">
-                        <!-- 机器人与具身智能 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li><strong>1X</strong>在加州工厂启动<strong>NEO人形机器人</strong>全规模量产，实现美国本土垂直整合制造。</li>
                                 <li><strong>Genesis AI</strong>推出<strong>GENE-26.5基础模型</strong>，采用先进数据引擎与专有机械手，实现更高灵巧度机器人操作。</li>
                                 <li><strong>WaiV Robotics</strong>获<strong>750万美元融资</strong>，专注海上无人机起降系统。</li>
@@ -213,30 +245,27 @@
                             </ul>
                         </div>
 
-                        <!-- 融资与估值动态 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">💰</span>融资与估值动态</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">💰</span>融资与估值动态</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li><strong>DeepSeek</strong>与国家大基金洽谈首轮融资<strong>30-40亿美元</strong>，投后估值或达<strong>450-500亿美元</strong>。</li>
                                 <li>芬兰AI实验室<strong>QuTwo</strong>完成<strong>2,500万欧元天使轮</strong>，估值<strong>3.25亿欧元</strong>。</li>
                                 <li><strong>Ethos</strong>获a16z领投<strong>2,275万美元A轮</strong>；<strong>Corgi</strong>获TCV领投<strong>1.6亿美元B轮</strong>，估值<strong>13亿美元</strong>。</li>
                             </ul>
                         </div>
 
-                        <!-- AI大模型与应用进展 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">🧠</span>AI大模型与应用进展</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">🧠</span>AI大模型与应用进展</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li>火山引擎<strong>Doubao-Seed-2.0-lite</strong>升级为豆包家族首款全模态理解模型，支持视频/图像/音频/文本原生统一理解。</li>
                                 <li><strong>OpenAI</strong>与Microsoft、AMD等合作推出<strong>Multipath Reliable Connection (MRC)</strong>协议。</li>
                                 <li><strong>Anthropic</strong>与<strong>SpaceX</strong>签署Colossus 1全部算力协议（新增300MW+），升级Claude Code限额并推出“dreaming”功能。</li>
                             </ul>
                         </div>
 
-                        <!-- 半导体芯片与硬科技 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">📟</span>半导体芯片与硬科技</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">📟</span>半导体芯片与硬科技</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li><strong>Nvidia</strong>投资<strong>Corning 5亿美元</strong>，双方新建三座光纤工厂，美国产能提升10倍，Corning盘前<strong>涨近18-20%</strong>。</li>
                                 <li><strong>AMD</strong>股价<strong>涨20.02%</strong>，总市值<strong>6,951亿美元</strong>；<strong>台积电</strong>涨<strong>5.04%</strong>，市值<strong>2.15万亿美元</strong>。</li>
                                 <li><strong>SpaceX</strong>拟建Terafab芯片工厂，投资至少<strong>550亿美元</strong>，总资本开支或达<strong>1,190亿美元</strong>。</li>
@@ -244,10 +273,9 @@
                             </ul>
                         </div>
 
-                        <!-- 财报与业绩动态 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">📊</span>财报与业绩动态</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">📊</span>财报与业绩动态</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li><strong>Uber</strong> Q1营收<strong>13.2亿美元（+14% YoY）</strong>，Gross Bookings<strong>+25%</strong>。</li>
                                 <li><strong>Instacart</strong> Q1营收<strong>10.2亿美元（+14% YoY）</strong>，GTV<strong>+13%</strong>。</li>
                                 <li><strong>DoorDash</strong> Q1营收<strong>40.4亿美元（+33% YoY）</strong>，Q2指引乐观，盘后涨11%+。</li>
@@ -256,10 +284,9 @@
                             </ul>
                         </div>
 
-                        <!-- 政策监管与国际动态 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">📜</span>政策监管与国际动态</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">📜</span>政策监管与国际动态</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li>美国财政部宣布季度再融资规模<strong>1,250亿美元</strong>。</li>
                                 <li><strong>元道通信</strong>公告被证监会立案调查进展，涉嫌年报虚假记载。</li>
                                 <li><strong>Anthropic</strong>高管下周访韩，与韩国政府共商AI安全风险方案。</li>
@@ -269,10 +296,9 @@
                             </ul>
                         </div>
 
-                        <!-- 其他资本市场新闻 -->
-                        <div class="card-hover bg-slate-900 rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2"><span class="text-2xl">📢</span>其他资本市场新闻</h3>
-                            <ul class="space-y-4 text-slate-300 text-[15px]">
+                        <div class="card-hover card-bg rounded-3xl p-6">
+                            <h3 class="text-xl font-semibold accent-gold mb-4 flex items-center gap-2"><span class="text-2xl">📢</span>其他资本市场新闻</h3>
+                            <ul class="space-y-4 text-[#3f2a1e] text-[15.5px]">
                                 <li><strong>VALUExBRK 2026</strong>投资者会议：Bill Ackman、Mohnish Pabrai等讨论AI、永久资本与长期投资。</li>
                                 <li><strong>Brian Chesky</strong>（Airbnb CEO）访谈：AI Founder Mode与消费者体验。</li>
                                 <li><strong>Lisa Su</strong>（AMD CEO）CNBC采访：AI代理驱动周期。</li>
@@ -287,17 +313,17 @@
 
                 <!-- 关键数据一览 -->
                 <section id="data" class="mb-16">
-                    <h2 class="section-header text-3xl font-semibold mb-6 text-white">五、关键数据一览</h2>
-                    <div class="bg-slate-900 rounded-3xl overflow-hidden">
+                    <h2 class="section-header text-3xl font-semibold mb-6">五、关键数据一览</h2>
+                    <div class="card-bg rounded-3xl overflow-hidden">
                         <table class="w-full">
-                            <thead class="bg-slate-800">
+                            <thead class="bg-[#f0e8d8]">
                                 <tr>
-                                    <th class="text-left py-4 px-6 text-slate-400">指标</th>
-                                    <th class="text-right py-4 px-6 text-slate-400">数值</th>
-                                    <th class="text-left py-4 px-6 text-slate-400">备注</th>
+                                    <th class="text-left py-4 px-6 text-[#5c4633]">指标</th>
+                                    <th class="text-right py-4 px-6 text-[#5c4633]">数值</th>
+                                    <th class="text-left py-4 px-6 text-[#5c4633]">备注</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-700 text-sm">
+                            <tbody class="divide-y divide-[#d4b88a] text-sm">
                                 <tr><td class="py-4 px-6">两市融资余额</td><td class="text-right py-4 px-6 font-semibold">27,282.33亿元</td><td class="py-4 px-6">增加<strong>410.83亿元</strong></td></tr>
                                 <tr><td class="py-4 px-6">DeepSeek投后估值</td><td class="text-right py-4 px-6 font-semibold">450-500亿美元</td><td class="py-4 px-6">国家大基金主导洽谈</td></tr>
                                 <tr><td class="py-4 px-6">Nvidia-Corning投资</td><td class="text-right py-4 px-6 font-semibold">5亿美元</td><td class="py-4 px-6">光纤工厂扩产</td></tr>
@@ -312,42 +338,37 @@
                 </section>
 
                 <!-- 信息来源 & 免责声明 -->
-                <div class="bg-slate-900/70 border border-slate-700 rounded-3xl p-8 text-slate-400 text-sm leading-relaxed">
-                    <strong class="block mb-3 text-slate-300">信息来源</strong>
+                <div class="card-bg border border-[#d4b88a] rounded-3xl p-8 text-[#5c4633] text-sm leading-relaxed">
+                    <strong class="block mb-3 text-[#3f2a1e]">信息来源</strong>
                     36氪、科创板日报、Techmeme、The Robot Report、Bloomberg、上交所官网、Yahoo Finance等公开渠道。<br>
                     数据截至北京时间2026年5月7日早6点，受交易时段影响，实时数据请以官方来源为准。
-                    <div class="mt-8 pt-6 border-t border-slate-700 text-xs">
+                    <div class="mt-8 pt-6 border-t border-[#d4b88a] text-xs">
                         <strong>免责声明</strong>：本报告仅供参考，不构成任何投资建议。数据来源于公开渠道，请以原始来源为准。
                     </div>
                 </div>
 
-                <div class="text-center text-slate-500 text-xs mt-12 pb-8">
-                    本网页由Grok生成 · 专业金融科技风格 · 完全适配手机端 · 可直接保存为 .html 文件离线浏览
+                <div class="text-center text-[#8c6f4e] text-xs mt-12 pb-8">
+                    本网页由Grok生成 · 米白底 + 古铜金配色 · Georgia Serif 字体 · 完全适配手机端
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Tailwind script already loaded
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'light');
         
-        // 平滑滚动（移动端友好）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
-
-        // 简单移动端导航提示
-        console.log('%c✅ 资本市场早间快报2026年5月7日 已加载 · 适合手机端浏览', 'color:#22d3ee; font-size:13px; font-family:monospace');
+        
+        console.log('%c✅ 资本市场早间快报2026年5月7日 · 米白底 + 古铜金配色 + Georgia Serif 已加载', 'color:#c9a66b; font-size:13px; font-family:Georgia, serif');
     </script>
 </body>
 </html>
+```
