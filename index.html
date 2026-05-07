@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -15,7 +15,7 @@
             font-family: Georgia, 'Noto Sans SC', serif;
         }
         
-        /* FT经典配色 + 极致紧凑布局（电脑端大幅减少两侧留白） */
+        /* FT经典配色 + 极致紧凑 + 低调专业 */
         .ft-header {
             background: #002f5f;
             box-shadow: 0 2px 8px rgba(0, 47, 95, 0.15);
@@ -30,12 +30,8 @@
             border: 1px solid #d4d4d4;
         }
         
-        .ft-pink {
-            color: #ff0066;
-        }
-        
-        .deep-text {
-            color: #1a1a1a;
+        .ft-accent {
+            color: #002f5f;           /* 低调深藏青（代替原粉色） */
         }
         
         .section-header {
@@ -47,11 +43,11 @@
         .section-header::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -3px;
             left: 0;
-            width: 48px;
-            height: 3px;
-            background: #ff0066;
+            width: 40px;
+            height: 2px;
+            background: #002f5f;
         }
         
         table {
@@ -71,20 +67,19 @@
             margin-bottom: 0;
         }
         
-        /* 电脑端极致紧凑：更宽容器 + 更小内边距 */
+        /* 电脑端极致紧凑（大幅减少两侧留白） */
         .container {
-            max-width: 1480px; /* 显著加宽，减少两侧留白 */
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 1480px;
+            margin: 0 auto;
         }
         
         .main-content {
-            padding: 20px 24px; /* 桌面端紧凑内边距 */
+            padding: 20px 28px;
         }
         
         @media (min-width: 1024px) {
             .main-content {
-                padding: 24px 32px;
+                padding: 24px 36px;
             }
         }
         
@@ -92,20 +87,22 @@
             margin-bottom: 1.75rem;
         }
         
-        .news-card {
-            margin-bottom: 1.25rem;
+        /* 目录模块 - 直接展示 */
+        .toc {
+            background: #ffffff;
+            border: 1px solid #e5e0d8;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 2rem;
         }
         
-        /* 移动端保持舒适 */
+        /* 移动端优化 */
         @media (max-width: 768px) {
             .main-content {
-                padding: 16px;
+                padding: 16px 18px;
             }
             table {
                 font-size: 14px;
-            }
-            .prose {
-                font-size: 16px;
             }
         }
         
@@ -132,18 +129,18 @@
         <div class="market-bar py-2.5 px-6 flex items-center gap-x-6 overflow-x-auto border-b border-[#002f5f]/10">
             <span class="font-medium text-[#002f5f]">标普500</span>
             <span class="font-semibold">7,365.12</span>
-            <span class="ft-pink font-medium">+1.46%</span>
+            <span class="font-medium text-[#002f5f]">+1.46%</span>
             <span class="font-medium text-[#002f5f]">纳斯达克100</span>
             <span class="font-semibold">≈28,599</span>
-            <span class="ft-pink font-medium">+2.08%</span>
+            <span class="font-medium text-[#002f5f]">+2.08%</span>
             <span class="font-medium text-[#002f5f]">恒生指数</span>
             <span class="font-semibold">26,213.78</span>
-            <span class="ft-pink font-medium">+1.22%</span>
+            <span class="font-medium text-[#002f5f]">+1.22%</span>
             <span class="font-medium text-[#002f5f]">黄金</span>
             <span class="font-semibold">≈4,700</span>
-            <span class="ft-pink font-medium">+3.0%</span>
-            <div class="ml-auto flex items-center gap-1 text-[#ff0066] text-xs font-medium">
-                <span class="inline-block w-2 h-2 bg-[#ff0066] rounded-full animate-pulse"></span>
+            <span class="font-medium text-[#002f5f]">+3.0%</span>
+            <div class="ml-auto flex items-center gap-1 text-[#002f5f] text-xs font-medium">
+                <span class="inline-block w-2 h-2 bg-[#002f5f] rounded-full animate-pulse"></span>
                 LIVE MARKETS
             </div>
         </div>
@@ -168,7 +165,7 @@
         </div>
 
         <div class="flex">
-            <!-- 左侧导航（桌面端） -->
+            <!-- 左侧导航栏（始终显示） -->
             <div class="w-56 bg-white border-r border-[#e5e0d8] p-6 hidden lg:flex flex-col">
                 <nav class="space-y-px text-sm font-medium">
                     <a href="#overview" class="nav-link block py-3 px-4 hover:bg-[#f8f4eb] rounded">整体趋势</a>
@@ -191,19 +188,34 @@
                 </div>
             </div>
 
-            <!-- 主内容区 - 极致紧凑 -->
+            <!-- 主内容区 -->
             <div class="flex-1 main-content">
                 
+                <!-- 直接展示目录（低调专业） -->
+                <div class="toc mb-8">
+                    <h3 class="text-[#002f5f] text-sm font-medium mb-3 flex items-center gap-2">
+                        <span class="text-base">目录</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-[#002f5f]">
+                        <a href="#overview" class="hover:underline">整体趋势</a>
+                        <a href="#global" class="hover:underline">一、全球市场概览</a>
+                        <a href="#hk" class="hover:underline">二、港股市场与交表动态</a>
+                        <a href="#sse" class="hover:underline">三、上交所发行上市动态</a>
+                        <a href="#news" class="hover:underline">四、资本市场新闻</a>
+                        <a href="#data" class="hover:underline">五、关键数据一览</a>
+                    </div>
+                </div>
+
                 <!-- 整体趋势 -->
                 <section id="overview" class="section">
                     <h2 class="section-header text-3xl mb-6">整体趋势</h2>
                     <div class="prose max-w-none text-[16.2px]">
                         <p>截至北京时间2026年5月7日早6点（对应美股5月6日收盘、欧洲/亚洲多数市场5月6日或最近交易日），全球资本市场呈现科技与成长股领涨的强势格局。</p>
-                        <p>美股三大指数集体收涨，<strong class="ft-pink">标普500报7,365.12点（+1.46%）</strong>、<strong class="ft-pink">纳斯达克100涨2.08%</strong>、<strong class="ft-pink">道琼斯涨1.24%</strong>，均创近期新高，科技股成为绝对主线；欧洲市场反弹强劲，<strong class="ft-pink">EURO STOXX 50涨2.68%</strong>、<strong class="ft-pink">DAX 40涨2.12%</strong>、<strong class="ft-pink">FTSE 100涨2.15%</strong>，能源与银行板块贡献突出。</p>
-                        <p>亚洲市场分化中走强，中国<strong class="ft-pink">上证综指报4,160.17点（+1.17%）</strong>、<strong class="ft-pink">恒生指数报26,213.78点（+1.22%）</strong>，港股科技指数同步上行；<strong class="ft-pink">日经225突破62,000点、盘中涨4.2%</strong>。</p>
-                        <p>债券温和，<strong class="ft-pink">Bloomberg US Aggregate涨0.19%</strong>；大宗商品避险情绪升温，<strong class="ft-pink">黄金大涨2.8-3.4%</strong>、白银涨约5%。科技硬件与AI基础设施成为最大亮点：<strong class="ft-pink">Nvidia投资Corning 5亿美元</strong>推动后者美股盘前<strong class="ft-pink">飙涨近18-20%</strong>，双方宣布在北卡与得州新建三座先进光纤工厂；<strong class="ft-pink">AMD股价暴涨20.02%至纪录新高（总市值逼近7,000亿美元）</strong>，CEO Lisa Su强调AI代理驱动数据中心营收57% YoY增长；<strong class="ft-pink">台积电涨5.04%刷新纪录，总市值2.15万亿美元</strong>。</p>
-                        <p>AI领域融资与应用加速落地：DeepSeek正与国家大基金等洽谈<strong class="ft-pink">30-40亿美元首轮融资，投后估值或达450-500亿美元</strong>；Anthropic与SpaceX达成Colossus 1全部算力合作，并升级Claude Code限额与“dreaming”智能体；火山引擎Doubao-Seed-2.0-lite实现全模态理解升级。机器人与具身智能持续突破，1X启动NEO人形机器人加州量产、Genesis AI发布GENE-26.5灵巧模型。财报季亮点频现，Uber、Instacart、DoorDash、Arm等Q1营收均超预期或指引上调。</p>
-                        <p>政策面，美国财政部宣布<strong class="ft-pink">1,250亿美元季度再融资</strong>，中国两市融资余额<strong class="ft-pink">增加410.83亿元</strong>，监管动态包括元道通信立案调查、Anthropic高管访韩共商AI安全。整体而言，AI算力、半导体与机器人产业链驱动风险偏好提升，市场对美联储政策预期与企业盈利乐观，但地缘政治与利率波动仍需警惕。</p>
+                        <p>美股三大指数集体收涨，<strong class="ft-accent">标普500报7,365.12点（+1.46%）</strong>、<strong class="ft-accent">纳斯达克100涨2.08%</strong>、<strong class="ft-accent">道琼斯涨1.24%</strong>，均创近期新高，科技股成为绝对主线；欧洲市场反弹强劲，<strong class="ft-accent">EURO STOXX 50涨2.68%</strong>、<strong class="ft-accent">DAX 40涨2.12%</strong>、<strong class="ft-accent">FTSE 100涨2.15%</strong>，能源与银行板块贡献突出。</p>
+                        <p>亚洲市场分化中走强，中国<strong class="ft-accent">上证综指报4,160.17点（+1.17%）</strong>、<strong class="ft-accent">恒生指数报26,213.78点（+1.22%）</strong>，港股科技指数同步上行；<strong class="ft-accent">日经225突破62,000点、盘中涨4.2%</strong>。</p>
+                        <p>债券温和，<strong class="ft-accent">Bloomberg US Aggregate涨0.19%</strong>；大宗商品避险情绪升温，<strong class="ft-accent">黄金大涨2.8-3.4%</strong>、白银涨约5%。科技硬件与AI基础设施成为最大亮点：<strong class="ft-accent">Nvidia投资Corning 5亿美元</strong>推动后者美股盘前<strong class="ft-accent">飙涨近18-20%</strong>，双方宣布在北卡与得州新建三座先进光纤工厂；<strong class="ft-accent">AMD股价暴涨20.02%至纪录新高（总市值逼近7,000亿美元）</strong>，CEO Lisa Su强调AI代理驱动数据中心营收57% YoY增长；<strong class="ft-accent">台积电涨5.04%刷新纪录，总市值2.15万亿美元</strong>。</p>
+                        <p>AI领域融资与应用加速落地：DeepSeek正与国家大基金等洽谈<strong class="ft-accent">30-40亿美元首轮融资，投后估值或达450-500亿美元</strong>；Anthropic与SpaceX达成Colossus 1全部算力合作，并升级Claude Code限额与“dreaming”智能体；火山引擎Doubao-Seed-2.0-lite实现全模态理解升级。机器人与具身智能持续突破，1X启动NEO人形机器人加州量产、Genesis AI发布GENE-26.5灵巧模型。财报季亮点频现，Uber、Instacart、DoorDash、Arm等Q1营收均超预期或指引上调。</p>
+                        <p>政策面，美国财政部宣布<strong class="ft-accent">1,250亿美元季度再融资</strong>，中国两市融资余额<strong class="ft-accent">增加410.83亿元</strong>，监管动态包括元道通信立案调查、Anthropic高管访韩共商AI安全。整体而言，AI算力、半导体与机器人产业链驱动风险偏好提升，市场对美联储政策预期与企业盈利乐观，但地缘政治与利率波动仍需警惕。</p>
                     </div>
                 </section>
 
@@ -223,23 +235,23 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-[#e5e0d8]">
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">标普 500</td><td class="text-right py-4 px-6 font-semibold">7,365.12</td><td class="text-right py-4 px-6 ft-pink">+105.90</td><td class="text-right py-4 px-6 ft-pink">+1.46%</td><td class="py-4 px-6 text-[#666]">美东5/6收盘，创近期新高</td></tr>
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">纳斯达克100</td><td class="text-right py-4 px-6 font-semibold">≈28,599</td><td class="text-right py-4 px-6 ft-pink">+584</td><td class="text-right py-4 px-6 ft-pink">+2.08%</td><td class="py-4 px-6 text-[#666]">科技股领涨</td></tr>
-                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">道琼斯</td><td class="text-right py-4 px-6 font-semibold">49,910.59</td><td class="text-right py-4 px-6 ft-pink">+612.34</td><td class="text-right py-4 px-6 ft-pink">+1.24%</td><td class="py-4 px-6 text-[#666]">广泛上涨</td></tr>
-                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">EURO STOXX 50</td><td class="text-right py-4 px-6 font-semibold">≈6,027</td><td class="text-right py-4 px-6 ft-pink">+157.50</td><td class="text-right py-4 px-6 ft-pink">+2.68%</td><td class="py-4 px-6 text-[#666]">近期收盘</td></tr>
-                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">DAX 40</td><td class="text-right py-4 px-6 font-semibold">24,918.69</td><td class="text-right py-4 px-6 ft-pink">+516.99</td><td class="text-right py-4 px-6 ft-pink">+2.12%</td><td class="py-4 px-6 text-[#666]">强势反弹</td></tr>
-                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">上证综指</td><td class="text-right py-4 px-6 font-semibold">4,160.17</td><td class="text-right py-4 px-6 ft-pink">+48.01</td><td class="text-right py-4 px-6 ft-pink">+1.17%</td><td class="py-4 px-6 text-[#666]">两月高点</td></tr>
-                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">恒生指数</td><td class="text-right py-4 px-6 font-semibold">26,213.78</td><td class="text-right py-4 px-6 ft-pink">+315.17</td><td class="text-right py-4 px-6 ft-pink">+1.22%</td><td class="py-4 px-6 text-[#666]">5/6收盘</td></tr>
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">标普 500</td><td class="text-right py-4 px-6 font-semibold">7,365.12</td><td class="text-right py-4 px-6 text-[#002f5f]">+105.90</td><td class="text-right py-4 px-6 text-[#002f5f]">+1.46%</td><td class="py-4 px-6 text-[#666]">美东5/6收盘，创近期新高</td></tr>
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">纳斯达克100</td><td class="text-right py-4 px-6 font-semibold">≈28,599</td><td class="text-right py-4 px-6 text-[#002f5f]">+584</td><td class="text-right py-4 px-6 text-[#002f5f]">+2.08%</td><td class="py-4 px-6 text-[#666]">科技股领涨</td></tr>
+                                <tr><td class="py-4 px-6">美股</td><td class="py-4 px-6">道琼斯</td><td class="text-right py-4 px-6 font-semibold">49,910.59</td><td class="text-right py-4 px-6 text-[#002f5f]">+612.34</td><td class="text-right py-4 px-6 text-[#002f5f]">+1.24%</td><td class="py-4 px-6 text-[#666]">广泛上涨</td></tr>
+                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">EURO STOXX 50</td><td class="text-right py-4 px-6 font-semibold">≈6,027</td><td class="text-right py-4 px-6 text-[#002f5f]">+157.50</td><td class="text-right py-4 px-6 text-[#002f5f]">+2.68%</td><td class="py-4 px-6 text-[#666]">近期收盘</td></tr>
+                                <tr><td class="py-4 px-6">欧洲</td><td class="py-4 px-6">DAX 40</td><td class="text-right py-4 px-6 font-semibold">24,918.69</td><td class="text-right py-4 px-6 text-[#002f5f]">+516.99</td><td class="text-right py-4 px-6 text-[#002f5f]">+2.12%</td><td class="py-4 px-6 text-[#666]">强势反弹</td></tr>
+                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">上证综指</td><td class="text-right py-4 px-6 font-semibold">4,160.17</td><td class="text-right py-4 px-6 text-[#002f5f]">+48.01</td><td class="text-right py-4 px-6 text-[#002f5f]">+1.17%</td><td class="py-4 px-6 text-[#666]">两月高点</td></tr>
+                                <tr><td class="py-4 px-6">中国</td><td class="py-4 px-6">恒生指数</td><td class="text-right py-4 px-6 font-semibold">26,213.78</td><td class="text-right py-4 px-6 text-[#002f5f]">+315.17</td><td class="text-right py-4 px-6 text-[#002f5f]">+1.22%</td><td class="py-4 px-6 text-[#666]">5/6收盘</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- 二、港股市场与交表动态 -->
+                <!-- 二、港股市场与交表动态（已改为干净标题） -->
                 <section id="hk" class="section">
                     <h2 class="section-header text-3xl mb-6">二、港股市场与交表动态</h2>
                     <div class="card-bg rounded-3xl p-6">
-                        <p class="mb-4">港股市场5月6日随A股走强，<strong class="ft-pink">恒生指数涨1.22%</strong>，恒生科技指数同步受益AI与半导体板块拉动。</p>
+                        <p class="mb-4">港股市场5月6日随A股走强，<strong class="ft-accent">恒生指数涨1.22%</strong>，恒生科技指数同步受益AI与半导体板块拉动。</p>
                         <p class="font-medium mb-3">新上市申请动态（截至5月6日最新披露）：</p>
                         <ul class="list-disc pl-6 space-y-2 text-[#1a1a1a] text-[15.5px]">
                             <li><strong>Yusheng Holdings Limited</strong>（06/05）：整体协调人公告-委任、申请版本（第一次呈交）。</li>
@@ -265,12 +277,12 @@
                     </div>
                 </section>
 
-                <!-- 四、资本市场新闻（双栏紧凑） -->
+                <!-- 四、资本市场新闻 -->
                 <section id="news" class="section">
                     <h2 class="section-header text-3xl mb-6">四、资本市场新闻</h2>
                     <div class="grid gap-5 md:grid-cols-2">
                         <div class="news-card card-bg rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold ft-pink mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
+                            <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li><strong>1X</strong>在加州工厂启动<strong>NEO人形机器人</strong>全规模量产。</li>
                                 <li><strong>Genesis AI</strong>推出<strong>GENE-26.5基础模型</strong>，实现更高灵巧度操作。</li>
@@ -279,15 +291,15 @@
                         </div>
                         
                         <div class="news-card card-bg rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold ft-pink mb-4 flex items-center gap-2"><span class="text-2xl">💰</span>融资与估值动态</h3>
+                            <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">💰</span>融资与估值动态</h3>
                             <ul class="space-y-3 text-[15.2px]">
-                                <li><strong>DeepSeek</strong>洽谈<strong>30-40亿美元</strong>首轮融资，投后估值或达<strong class="ft-pink">450-500亿美元</strong>。</li>
+                                <li><strong>DeepSeek</strong>洽谈<strong>30-40亿美元</strong>首轮融资，投后估值或达<strong class="ft-accent">450-500亿美元</strong>。</li>
                                 <li><strong>QuTwo</strong>完成<strong>2,500万欧元天使轮</strong>，估值3.25亿欧元。</li>
                             </ul>
                         </div>
                         
                         <div class="news-card card-bg rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold ft-pink mb-4 flex items-center gap-2"><span class="text-2xl">🧠</span>AI大模型与应用进展</h3>
+                            <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">🧠</span>AI大模型与应用进展</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li>火山引擎<strong>Doubao-Seed-2.0-lite</strong>升级为首款全模态理解模型。</li>
                                 <li><strong>Anthropic</strong>与<strong>SpaceX</strong>签署Colossus 1全部算力协议。</li>
@@ -295,10 +307,10 @@
                         </div>
                         
                         <div class="news-card card-bg rounded-3xl p-6">
-                            <h3 class="text-xl font-semibold ft-pink mb-4 flex items-center gap-2"><span class="text-2xl">📟</span>半导体芯片与硬科技</h3>
+                            <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">📟</span>半导体芯片与硬科技</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li><strong>Nvidia</strong>投资<strong>Corning 5亿美元</strong>，Corning盘前涨近18-20%。</li>
-                                <li><strong>AMD</strong>股价暴涨<strong class="ft-pink">20.02%</strong>，市值逼近7,000亿美元。</li>
+                                <li><strong>AMD</strong>股价暴涨<strong class="ft-accent">20.02%</strong>，市值逼近7,000亿美元。</li>
                                 <li><strong>台积电</strong>涨5.04%，市值2.15万亿美元。</li>
                             </ul>
                         </div>
@@ -318,7 +330,7 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-[#e5e0d8]">
-                                <tr><td class="py-4 px-6">两市融资余额</td><td class="text-right py-4 px-6 font-semibold">27,282.33亿元</td><td class="py-4 px-6">增加<strong class="ft-pink">410.83亿元</strong></td></tr>
+                                <tr><td class="py-4 px-6">两市融资余额</td><td class="text-right py-4 px-6 font-semibold">27,282.33亿元</td><td class="py-4 px-6">增加<strong class="ft-accent">410.83亿元</strong></td></tr>
                                 <tr><td class="py-4 px-6">DeepSeek投后估值</td><td class="text-right py-4 px-6 font-semibold">450-500亿美元</td><td class="py-4 px-6">国家大基金主导洽谈</td></tr>
                                 <tr><td class="py-4 px-6">Nvidia-Corning投资</td><td class="text-right py-4 px-6 font-semibold">5亿美元</td><td class="py-4 px-6">光纤工厂扩产</td></tr>
                                 <tr><td class="py-4 px-6">AMD市值</td><td class="text-right py-4 px-6 font-semibold">6,951亿美元</td><td class="py-4 px-6">+20.02%</td></tr>
@@ -338,7 +350,7 @@
                 </div>
 
                 <div class="text-center text-[#666] text-xs mt-8 pb-8">
-                    本网页由Grok生成 · FT风格 · 电脑端紧凑优化 · 专业资本市场早报
+                    本网页由Grok生成 · FT风格 · 低调专业紧凑版
                 </div>
             </div>
         </div>
