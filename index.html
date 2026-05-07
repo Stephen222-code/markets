@@ -15,7 +15,7 @@
             font-family: Georgia, 'Noto Sans SC', serif;
         }
         
-        /* FT经典配色 + 极致紧凑 + 低调专业 */
+        /* FT经典配色 + 极致紧凑（已移除所有多余白色卡片块） */
         .ft-header {
             background: #002f5f;
             box-shadow: 0 2px 8px rgba(0, 47, 95, 0.15);
@@ -31,7 +31,7 @@
         }
         
         .ft-accent {
-            color: #002f5f;           /* 低调深藏青（代替原粉色） */
+            color: #002f5f;
         }
         
         .section-header {
@@ -67,7 +67,7 @@
             margin-bottom: 0;
         }
         
-        /* 电脑端极致紧凑（大幅减少两侧留白） */
+        /* 电脑端极致紧凑 */
         .container {
             max-width: 1480px;
             margin: 0 auto;
@@ -85,15 +85,6 @@
         
         .section {
             margin-bottom: 1.75rem;
-        }
-        
-        /* 目录模块 - 直接展示 */
-        .toc {
-            background: #ffffff;
-            border: 1px solid #e5e0d8;
-            border-radius: 8px;
-            padding: 12px 20px;
-            margin-bottom: 2rem;
         }
         
         /* 移动端优化 */
@@ -165,7 +156,7 @@
         </div>
 
         <div class="flex">
-            <!-- 左侧导航栏（始终显示） -->
+            <!-- 左侧导航栏（始终显示目录） -->
             <div class="w-56 bg-white border-r border-[#e5e0d8] p-6 hidden lg:flex flex-col">
                 <nav class="space-y-px text-sm font-medium">
                     <a href="#overview" class="nav-link block py-3 px-4 hover:bg-[#f8f4eb] rounded">整体趋势</a>
@@ -188,25 +179,10 @@
                 </div>
             </div>
 
-            <!-- 主内容区 -->
+            <!-- 主内容区（已移除所有多余白色块，内容直接衔接） -->
             <div class="flex-1 main-content">
                 
-                <!-- 直接展示目录（低调专业） -->
-                <div class="toc mb-8">
-                    <h3 class="text-[#002f5f] text-sm font-medium mb-3 flex items-center gap-2">
-                        <span class="text-base">目录</span>
-                    </h3>
-                    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-[#002f5f]">
-                        <a href="#overview" class="hover:underline">整体趋势</a>
-                        <a href="#global" class="hover:underline">一、全球市场概览</a>
-                        <a href="#hk" class="hover:underline">二、港股市场与交表动态</a>
-                        <a href="#sse" class="hover:underline">三、上交所发行上市动态</a>
-                        <a href="#news" class="hover:underline">四、资本市场新闻</a>
-                        <a href="#data" class="hover:underline">五、关键数据一览</a>
-                    </div>
-                </div>
-
-                <!-- 整体趋势 -->
+                <!-- 整体趋势（直接开始） -->
                 <section id="overview" class="section">
                     <h2 class="section-header text-3xl mb-6">整体趋势</h2>
                     <div class="prose max-w-none text-[16.2px]">
@@ -247,7 +223,7 @@
                     </div>
                 </section>
 
-                <!-- 二、港股市场与交表动态（已改为干净标题） -->
+                <!-- 二、港股市场与交表动态 -->
                 <section id="hk" class="section">
                     <h2 class="section-header text-3xl mb-6">二、港股市场与交表动态</h2>
                     <div class="card-bg rounded-3xl p-6">
@@ -281,7 +257,7 @@
                 <section id="news" class="section">
                     <h2 class="section-header text-3xl mb-6">四、资本市场新闻</h2>
                     <div class="grid gap-5 md:grid-cols-2">
-                        <div class="news-card card-bg rounded-3xl p-6">
+                        <div class="card-bg rounded-3xl p-6">
                             <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">🤖</span>机器人与具身智能</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li><strong>1X</strong>在加州工厂启动<strong>NEO人形机器人</strong>全规模量产。</li>
@@ -290,7 +266,7 @@
                             </ul>
                         </div>
                         
-                        <div class="news-card card-bg rounded-3xl p-6">
+                        <div class="card-bg rounded-3xl p-6">
                             <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">💰</span>融资与估值动态</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li><strong>DeepSeek</strong>洽谈<strong>30-40亿美元</strong>首轮融资，投后估值或达<strong class="ft-accent">450-500亿美元</strong>。</li>
@@ -298,7 +274,7 @@
                             </ul>
                         </div>
                         
-                        <div class="news-card card-bg rounded-3xl p-6">
+                        <div class="card-bg rounded-3xl p-6">
                             <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">🧠</span>AI大模型与应用进展</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li>火山引擎<strong>Doubao-Seed-2.0-lite</strong>升级为首款全模态理解模型。</li>
@@ -306,7 +282,7 @@
                             </ul>
                         </div>
                         
-                        <div class="news-card card-bg rounded-3xl p-6">
+                        <div class="card-bg rounded-3xl p-6">
                             <h3 class="text-xl font-semibold ft-accent mb-4 flex items-center gap-2"><span class="text-2xl">📟</span>半导体芯片与硬科技</h3>
                             <ul class="space-y-3 text-[15.2px]">
                                 <li><strong>Nvidia</strong>投资<strong>Corning 5亿美元</strong>，Corning盘前涨近18-20%。</li>
@@ -350,7 +326,7 @@
                 </div>
 
                 <div class="text-center text-[#666] text-xs mt-8 pb-8">
-                    本网页由Grok生成 · FT风格 · 低调专业紧凑版
+                    本网页由Grok生成 · FT风格 · 极简紧凑版
                 </div>
             </div>
         </div>
